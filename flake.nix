@@ -21,6 +21,7 @@
 			system = "x86_64-linux";
 			modules = [
 				./configuration.nix
+				./configs
 
 				lanzaboote.nixosModules.lanzaboote
 				({ pkgs, lib, ... }: {
@@ -39,7 +40,7 @@
 				home-manager.nixosModules.home-manager {
 					home-manager.useGlobalPkgs = true;
 					home-manager.useUserPackages = true;
-					home-manager.users.nixxer = import ./home.nix;
+					home-manager.users.nixxer = import ./home;
 				}
 			];
 		};
