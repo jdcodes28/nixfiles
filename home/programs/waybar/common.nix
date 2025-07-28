@@ -1,5 +1,5 @@
 { ... }: {
-  waybar = {
+  programs.waybar = {
     enable = true;
     settings = {
       mainBar = {
@@ -51,13 +51,6 @@
           format = "RAM: {}%";
           format-alt = "RAM: {used:0.1f}GB";
           max-length = 10;
-        };
-
-        "backlight" = {
-          device = "intel_backlight";
-          tooltip = true;
-          format = "BRT: {percent}%";
-          tooltip-format = "Brightness: {percent}%";
         };
 
         "network" = {

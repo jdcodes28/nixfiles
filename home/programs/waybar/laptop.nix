@@ -1,6 +1,23 @@
 { ... }: {
-  waybar.settings = {
-    modules-right = ["pulseaudio" "network" "cpu" "memory" "backlight" "battery" "temperature" "clock" "tray"];
+  programs.waybar.settings.mainBar = {
+    modules-right = [
+      "pulseaudio"
+      "network"
+      "cpu"
+      "memory"
+      "backlight"
+      "battery"
+      "temperature"
+      "clock"
+      "tray"
+    ];
+
+    "backlight" = {
+      device = "intel_backlight";
+      tooltip = true;
+      format = "BRT: {percent}%";
+      tooltip-format = "Brightness: {percent}%";
+    };
 
     "battery" = {
       bat = "BAT0";
@@ -14,5 +31,5 @@
       format = "BAT: {capacity}%";
       format-alt = "BAT: {time}";
     };
-  }
+  };
 }

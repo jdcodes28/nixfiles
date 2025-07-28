@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs = {
     helix.enable = true;
-    
+
     carapace = {
       enable = true;
       enableNushellIntegration = true;
@@ -9,6 +9,7 @@
 
     kitty = {
       enable = true;
+
       settings = {
         enable_audio_bell = true;
         mouse_hide_wait = "-1.0";
@@ -21,6 +22,7 @@
 
     starship = {
       enable = true;
+
       settings = {
         add_newline = false;
         line_break.disabled = true;
@@ -34,15 +36,18 @@
 
     nushell = {
 			enable = true;
+   
 			shellAliases = {
 				vi = "nvim";
 				vim = "nvim";
 				nano = "nvim";
 			};
+      
 			extraConfig = ''
 				let carapace_completer = {|spans|
 					carapace $spans.0 nushell ...$spans | from json
 				}
+
 				$env.config = {
 					show_banner: false,
 					completions: {
@@ -57,6 +62,7 @@
 						}
 					},
 				}
+
 				fastfetch --logo-color-1 "38;2;0;255;255" --logo-color-2 "38;2;255;0;255"
 			'';
 		};
