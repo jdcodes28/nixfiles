@@ -3,7 +3,7 @@
     monitor = [
       "HDMI-A-2, 2560x1440@144, 0x0, 1"
       "DP-1, 3840x2160@144, 2560x0, 1"
-      "DP-2, 2560x1440@165, 6400x0, 1
+      "DP-2, 2560x1440@165, 6400x0, 1"
     ];
 
     exec-once = [
@@ -15,7 +15,7 @@
       "hyprpaper"
       "hyprpolkitagent"
       "swaync"
-      "swaybg -i ~/Pictures/Wallpapers/desert.jpeg"
+      "swaybg -m stretch -o * -i ~/Pictures/Wallpapers/blue_cubes.jpg"
     ];
   };
 }
