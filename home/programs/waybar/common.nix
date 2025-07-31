@@ -16,6 +16,10 @@
         "temperature" = {
           format = "{temperatureC} C";
           max-length = 10;
+          hwmon-path = [
+            "/sys/class/hwmon/hwmon1/temp1_input"
+            "/sys/class/thermal/thermal_zone0/temp"
+          ];
         };
 
         "tray" = {

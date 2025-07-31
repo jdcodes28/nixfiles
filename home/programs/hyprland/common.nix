@@ -11,7 +11,7 @@
 			decoration = {
 				blur = {
 					enabled = true;
-					passes = 1;
+					passes = 2;
 					size = 3;
 					vibrancy = 0.33;
 				};
@@ -29,7 +29,7 @@
 			};
 
 			dwindle = {
-				preserve_split = true;
+				preserve_split = false;
 				pseudotile = true;
 			};
 
@@ -40,7 +40,7 @@
 				"col.inactive_border" = "rgba(3c3836be)";
 				gaps_in = 5;
 				gaps_out = 5;
-				layout = "master";
+				layout = "dwindle";
 				resize_on_border = false;
 			};
 
@@ -164,7 +164,7 @@
 				"hyprpaper"
 				"hyprpolkitagent"
 				"swaync"
-				"swaybg -i ~/Downloads/desert.jpeg"
+				"swaybg -o '*' -m stretch -i $(find ~/Pictures/Wallpapers -type f | shuf -n 1)"
 			];
 
 			input = {
@@ -180,8 +180,8 @@
 			env = [
 				"NIXOS_OZONE_WL,1"
 				"XCURSOR_SIZE, 24"
-				"HYPRCURSOR_SIZE, 48"
-				"HYPRCURSOR_THEME,'Future-Cyan-Hyprcursor_Theme'"
+				"HYPRCURSOR_SIZE, 24"
+				"HYPRCURSOR_THEME,'Bibata'"
 				"XDG_CURRENT_DESKTOP,Hyprland"
 				"XDG_SESSION_TYPE,wayland"
 				"XDG_SESSION_DESKTOP,Hyprland"

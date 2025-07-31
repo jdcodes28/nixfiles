@@ -32,7 +32,7 @@
     vscode = {
       enable = true;
       package = pkgs.vscode.fhs;
-    }
+    };
 
     nushell = {
 			enable = true;
