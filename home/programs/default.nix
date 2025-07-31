@@ -1,6 +1,17 @@
 { pkgs, ... }: {
   programs = {
-    helix.enable = true;
+    helix = {
+      enable = true;
+      settings = {
+        theme = "papercolor-light";
+        editor = {
+          line-number = "relative";
+          color-mode = true;
+          indent-guides.render = true;
+          soft-wrap.enable = true;
+        };
+      };
+    };
 
     carapace = {
       enable = true;
