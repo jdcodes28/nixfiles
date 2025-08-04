@@ -133,6 +133,7 @@
 				"$mainMod ALT, Print, exec, hyprshot -m window -z -o /home/nixxer/Pictures/Screenshots"
 				"$mainMod SHIFT, Print, exec, hyprshot -m region -z -o /home/nixxer/Pictures/Screenshots"
 				"$mainMod, V, exec, $terminal --class clipse -e 'clipse'"
+				"$mainMod, C, exec, hyprpicker -a"
 			];
 
 			bindm = [
@@ -141,11 +142,12 @@
 			];
 
 			bindel = [
-				",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-				",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-				",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-				",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
-				",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
+				",XF86AudioRaiseVolume, exec, volumectl -u up"
+				",XF86AudioLowerVolume, exec, volumectl -u down"
+				",XF86AudioMute, exec, volumectl toggle-mute"
+				",XF86AudioMicMute, exec, volumectl -m toggle-mute"
+				",XF86MonBrightnessUp, exec, lightctl up"
+				",XF86MonBrightnessDown, exec, lightctl down"
 			];
 
 			bindl = [
@@ -155,21 +157,25 @@
 				",XF86AudioPrev, exec, playerctl previous"
 			];
 
+			exec = [
+				"avizo-service"
+			];
+
 			exec-once = [
 				"waybar"
 				"clipse -listen"
 				"wlsunset -l 41.7 -L -87.7 -t 3250 -T 6500"
 				"nm-applet --indicator"
 				"hypridle"
-				"hyprpaper"
-				"hyprpolkitagent"
 				"swaync"
 				"swaybg -o '*' -m stretch -i $(find ~/Pictures/Wallpapers -type f | shuf -n 1)"
+				"systemctl --user start hyprpolkitagent"
 			];
 
 			input = {
 				follow_mouse = 2;
 				numlock_by_default = true;
+				accel_profile = "flat";
 			};
 
 			cursor = {
@@ -187,11 +193,12 @@
 				"XDG_SESSION_DESKTOP,Hyprland"
 				"QT_QPA_PLATFORM,wayland"
 				"XDG_SCREENSHOTS_DIR,$HOME/Pictures/Screenshots"
+				"ELECTRON_OZONE_PLATFORM_HINT,wayland"
 			];
 
 			windowrule = [
 				"float,class:(clipse)"
-				"size 600 600,class:(clipse)"
+				"size 600 800,class:(clipse)"
 			];
 		};
 	};

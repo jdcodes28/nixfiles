@@ -10,7 +10,9 @@
 		chromium
 		kitty
 		meld
-		mpv
+		(mpv.override {
+			scripts = [mpvScripts.mpris];
+		})
 		rofi-wayland
 		brave
 		vivaldi
@@ -23,10 +25,8 @@
 		hyprcursor
 		hyprshot
 		hypridle
-		hyprpaper
 		hyprpicker
 		hyprpolkitagent
-		hyprlock
 		wl-clipboard
 		wl-clip-persist
 		clipse
@@ -40,7 +40,11 @@
 		playerctl
 		swaynotificationcenter
 		swaybg
+		loupe
+		avizo
 	];
+
+	dconf.enable = true;
 
 	imports = [
 		./programs

@@ -24,6 +24,7 @@
 	security = {
 		rtkit.enable = true;
 		polkit.enable = true;
+		pam.services.hyprlock = {};
 	};
 
 	services = {
@@ -42,6 +43,8 @@
 
 	xdg.portal = {
 		enable = true;
-		extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
+		extraPortals = with pkgs; [
+			xdg-desktop-portal-hyprland
+		];
 	};
 }

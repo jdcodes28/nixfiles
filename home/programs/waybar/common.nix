@@ -7,6 +7,11 @@
         layer = "top";
         modules-left = ["hyprland/workspaces"];
 
+        "custom/themes" = {
+          format = "THEME SWITCH";
+          on-click = "~/test.nu";
+        };
+
         "hyprland/workspaces" = {
           format = "{name}";
           all-outputs = true;
@@ -112,6 +117,7 @@
         color: #000;
       }
 
+      #custom-themes,
       #clock,
       #battery,
       #cpu,
@@ -207,12 +213,12 @@
         border-bottom: solid 3px rgba(85, 85, 85, 0.75);
       }
 
-      #clock {
+      #clock, #custom-themes {
         background-color: rgba(85, 85, 85, 0.75);
         border-bottom: solid 3px rgba(170, 170, 170, 0.75);
       }
 
-      #clock:hover {
+      #clock:hover, #custom-themes:hover {
         background-color: rgba(170, 170, 170, 0.75);
         border-bottom: solid 3px rgba(85, 85, 85, 0.75);
       }
