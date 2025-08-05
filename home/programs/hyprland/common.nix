@@ -12,19 +12,21 @@
 				blur = {
 					enabled = true;
 					passes = 2;
-					size = 3;
+					size = 5;
 					vibrancy = 0.33;
 				};
 
 				shadow = {
-					color = "rgba(1a1a1aee)";
+					color = "rgba(000000ee)";
 					enabled = true;
-					range = 4;
-					render_power = 3;
+					range = 5;
+					render_power = 2;
 				};
 
 				active_opacity = 0.95;
 				inactive_opacity = 0.75;
+				dim_inactive = true;
+				dim_strength = 0.25;
 				rounding = 0;
 			};
 
@@ -35,7 +37,7 @@
 
 			general = {
 				allow_tearing = false;
-				border_size = 3;
+				border_size = 4;
 				"col.active_border" = "rgba(00ffffbe) rgba(ee00ffbe) rgba(00ffffbe) rgba(ee00ffbe) rgba(00ffffbe) rgba(ee00ffbe) rgba(00ffffbe) rgba(ee00ffbe) rgba(00ffffbe) rgba(ee00ffbe) 22deg";
 				"col.inactive_border" = "rgba(3c3836be)";
 				gaps_in = 5;

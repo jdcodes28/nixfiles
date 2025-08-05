@@ -8,6 +8,12 @@
 				xwayland.enable = true;
 		};
 
+		steam = {
+			enable = true;
+			remotePlay.openFirewall = true;
+			dedicatedServer.openFirewall = true;
+		};
+
 		thunar = {
 			enable = true;
 			plugins = with pkgs.xfce; [

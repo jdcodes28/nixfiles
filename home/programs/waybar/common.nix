@@ -9,7 +9,7 @@
 
         "custom/themes" = {
           format = "THEME SWITCH";
-          on-click = "~/test.nu";
+          on-click = "~/themes.nu";
         };
 
         "hyprland/workspaces" = {

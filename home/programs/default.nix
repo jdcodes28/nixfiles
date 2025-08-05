@@ -96,9 +96,9 @@
 			enable = true;
    
 			shellAliases = {
-				vi = "nvim";
-				vim = "nvim";
-				nano = "nvim";
+				vi = "hx";
+				vim = "hx";
+				nano = "hx";
 			};
       
 			extraConfig = ''
