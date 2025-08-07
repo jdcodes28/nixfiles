@@ -3,7 +3,6 @@
     helix = {
       enable = true;
       settings = {
-        theme = "papercolor-light";
         editor = {
           line-number = "relative";
           color-mode = true;
