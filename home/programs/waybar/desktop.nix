@@ -10,5 +10,10 @@
       "clock"
       "tray"
     ];
+
+    "custom/themes" = {
+      format = "THEME SWITCH";
+      on-click = "~/themes.nu";
+    };
   };
 }

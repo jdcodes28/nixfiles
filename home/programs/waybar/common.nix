@@ -7,11 +7,6 @@
         layer = "top";
         modules-left = ["hyprland/workspaces"];
 
-        "custom/themes" = {
-          format = "THEME SWITCH";
-          on-click = "~/themes.nu";
-        };
-
         "hyprland/workspaces" = {
           format = "{name}";
           all-outputs = true;
@@ -71,7 +66,7 @@
         };
 
         "pulseaudio" = {
-          format = "AUDIO: {volume}%";
+          format = "VOL: {volume}%";
           format-muted = "MUTED";
           on-click = "pavucontrol";
         };

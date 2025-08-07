@@ -4,7 +4,7 @@
 		package = null;
 		portalPackage = null;
 		settings = {
-			"$fileManager" = "thunar";
+			"$fileManager" = "dolphin";
 			"$mainMod" = "SUPER";
 			"$menu" = "rofi -show combi -combi-modes 'window,drun' -modes combi -show-icons";
 			"$terminal" = "kitty";
@@ -194,13 +194,20 @@
 				"XDG_SESSION_TYPE,wayland"
 				"XDG_SESSION_DESKTOP,Hyprland"
 				"QT_QPA_PLATFORM,wayland"
+				"QT_QPA_PLATFORMTHEME,gnome"
+				"QT_QUICK_CONTROLS_STYLE,org.hyprland.style"
+				"QT_AUTO_SCREEN_SCALE_FACTOR,1"
+				"QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+				"GDK_SCALE,1"
+				"QT_SCALE_FACTOR,1"
+				"MOZ_ENABLE_WAYLAND,1"
 				"XDG_SCREENSHOTS_DIR,$HOME/Pictures/Screenshots"
 				"ELECTRON_OZONE_PLATFORM_HINT,wayland"
 			];
 
 			windowrule = [
 				"float,class:(clipse)"
-				"size 600 800,class:(clipse)"
+				"size 800 600,class:(clipse)"
 			];
 		};
 	};

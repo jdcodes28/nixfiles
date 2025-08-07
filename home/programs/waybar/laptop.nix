@@ -13,6 +13,11 @@
       "tray"
     ];
 
+    "custom/themes" = {
+      format = "THEME";
+      on-click = "~/themes.nu";
+    };
+
     "backlight" = {
       device = "intel_backlight";
       tooltip = true;

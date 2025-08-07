@@ -14,15 +14,6 @@
 			dedicatedServer.openFirewall = true;
 		};
 
-		thunar = {
-			enable = true;
-			plugins = with pkgs.xfce; [
-				thunar-archive-plugin
-				thunar-volman
-			];
-		};
-
-		xfconf.enable = true;
 		file-roller.enable = true;
 		xwayland.enable = true;
 	};
