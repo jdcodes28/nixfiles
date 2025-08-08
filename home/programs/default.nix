@@ -5,7 +5,7 @@
       settings = {
         editor = {
           line-number = "relative";
-          color-mode = true;
+          color-modes = true;
           indent-guides.render = true;
           soft-wrap.enable = true;
           bufferline = "multiple";

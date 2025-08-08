@@ -22,6 +22,8 @@
 			modules = [
 				./configuration.nix
 				./configs
+				# uncomment if on desktop
+				# ./configs/desktop.nix
 
 				lanzaboote.nixosModules.lanzaboote
 				({ pkgs, lib, ... }: {

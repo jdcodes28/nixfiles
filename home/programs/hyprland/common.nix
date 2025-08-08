@@ -4,7 +4,7 @@
 		package = null;
 		portalPackage = null;
 		settings = {
-			"$fileManager" = "dolphin";
+			"$fileManager" = "nautilus";
 			"$mainMod" = "SUPER";
 			"$menu" = "rofi -show combi -combi-modes 'window,drun' -modes combi -show-icons";
 			"$terminal" = "kitty";

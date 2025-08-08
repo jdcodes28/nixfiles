@@ -43,11 +43,7 @@
 		loupe
 		avizo
 		hyprland-qt-support
-		kdePackages.qtwayland
-		kdePackages.dolphin
-		kdePackages.qtsvg
-		kdePackages.kio-fuse
-		kdePackages.kio-extras
+		nautilus
 	];
 
 	dconf.enable = true;
