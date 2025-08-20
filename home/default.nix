@@ -8,12 +8,12 @@
 		bitwarden
 		brightnessctl
 		chromium
-		kitty
 		meld
 		(mpv.override {
 			scripts = [mpvScripts.mpris];
 		})
 		rofi-wayland
+		rofimoji
 		brave
 		vivaldi
 		jujutsu
@@ -32,7 +32,6 @@
 		clipse
 		grim
 		evince
-		yazi
 		networkmanagerapplet
 		pavucontrol
 		telegram-desktop

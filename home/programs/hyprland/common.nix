@@ -6,8 +6,8 @@
 		settings = {
 			"$fileManager" = "nautilus";
 			"$mainMod" = "SUPER";
-			"$menu" = "rofi -show combi -combi-modes 'window,drun' -modes combi -show-icons";
-			"$terminal" = "kitty";
+			"$menu" = "rofi -show combi -combi-modes 'window,drun,emoji:rofimoji' -modes combi -show-icons";
+			"$terminal" = "ghostty";
 			decoration = {
 				blur = {
 					enabled = true;
@@ -132,9 +132,9 @@
 				"$mainMod CTRL, 9, movetoworkspacesilent, 9"
 				"$mainMod CTRL, 0, movetoworkspacesilent, 0"
 				"$mainMod, Print, exec, grim -c"
-				"$mainMod ALT, Print, exec, hyprshot -m window -z -o /home/nixxer/Pictures/Screenshots"
-				"$mainMod SHIFT, Print, exec, hyprshot -m region -z -o /home/nixxer/Pictures/Screenshots"
-				"$mainMod, V, exec, $terminal --class clipse -e 'clipse'"
+				"$mainMod ALT, Print, exec, hyprshot -m window -z -o ~/Pictures/Screenshots"
+				"$mainMod SHIFT, Print, exec, hyprshot -m region -z -o ~/Pictures/Screenshots"
+				"$mainMod, V, exec, $terminal --class=com.ghostty.clipse -e 'clipse'"
 				"$mainMod, C, exec, hyprpicker -a"
 			];
 
@@ -203,11 +203,13 @@
 				"MOZ_ENABLE_WAYLAND,1"
 				"XDG_SCREENSHOTS_DIR,$HOME/Pictures/Screenshots"
 				"ELECTRON_OZONE_PLATFORM_HINT,wayland"
+				"EDITOR,hx"
+				"GRIM_DEFAULT_DIR,$HOME/Pictures/Screenshots"
 			];
 
 			windowrule = [
-				"float,class:(clipse)"
-				"size 800 600,class:(clipse)"
+				"float,class:(com.ghostty.clipse)"
+				"size 800 600,class:(com.ghostty.clipse)"
 			];
 		};
 	};

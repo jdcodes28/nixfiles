@@ -13,6 +13,24 @@
       };
     };
 
+    ghostty = {
+      enable = true;
+      settings = {
+        font-family = "MonoLisa Variable";
+        font-size = 12;
+        theme = "dark:BlulocoDark,light:BlulocoLight";
+        cursor-style = "block";
+        cursor-style-blink = true;
+      };
+    };
+
+    librewolf = {
+      enable = true;
+      settings = {
+        "identity.fxaccounts.enabled" = true;
+      };
+    };
+
     hyprlock = {
       enable = true;
       settings = {
@@ -64,19 +82,6 @@
       enableNushellIntegration = true;
     };
 
-    kitty = {
-      enable = true;
-
-      settings = {
-        enable_audio_bell = true;
-        mouse_hide_wait = "-1.0";
-        background_opacity = 0.95;
-        background_blur = 5;
-        font_family = "MonoLisa Variable";
-        font_size = 12.0;
-      };
-    };
-
     starship = {
       enable = true;
 
@@ -124,4 +129,6 @@
 			'';
 		};
   };
+
+  yazi.enable = true;
 }
