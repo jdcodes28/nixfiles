@@ -43,6 +43,7 @@
 		avizo
 		hyprland-qt-support
 		nautilus
+		catppuccin-cursors.latteLight
 	];
 
 	dconf.enable = true;

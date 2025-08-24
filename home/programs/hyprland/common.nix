@@ -189,7 +189,7 @@
 				"NIXOS_OZONE_WL,1"
 				"XCURSOR_SIZE, 24"
 				"HYPRCURSOR_SIZE, 24"
-				"HYPRCURSOR_THEME,'Bibata'"
+				"HYPRCURSOR_THEME, 'catppuccin-latte-light-cursors'"
 				"XDG_CURRENT_DESKTOP,Hyprland"
 				"XDG_SESSION_TYPE,wayland"
 				"XDG_SESSION_DESKTOP,Hyprland"
