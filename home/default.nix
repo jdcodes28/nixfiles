@@ -44,6 +44,7 @@
 		hyprland-qt-support
 		nautilus
 		catppuccin-cursors.latteLight
+		catppuccin-cursors.mochaDark
 	];
 
 	dconf.enable = true;
