@@ -13,7 +13,6 @@
 			scripts = [mpvScripts.mpris];
 		})
 		rofi-wayland
-		rofimoji
 		brave
 		vivaldi
 		jujutsu
@@ -45,6 +44,8 @@
 		nautilus
 		catppuccin-cursors.latteLight
 		catppuccin-cursors.mochaDark
+		lunatask
+		smile
 	];
 
 	dconf.enable = true;

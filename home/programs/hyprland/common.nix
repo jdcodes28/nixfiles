@@ -6,7 +6,7 @@
 		settings = {
 			"$fileManager" = "nautilus";
 			"$mainMod" = "SUPER";
-			"$menu" = "rofi -show combi -combi-modes 'window,drun,emoji:rofimoji' -modes combi -show-icons";
+			"$menu" = "rofi -show combi -combi-modes 'window,drun' -modes combi -show-icons";
 			"$terminal" = "ghostty";
 			decoration = {
 				blur = {
@@ -38,7 +38,7 @@
 			general = {
 				allow_tearing = false;
 				border_size = 4;
-				"col.active_border" = "rgba(00ffffbe) rgba(ee00ffbe) rgba(00ffffbe) rgba(ee00ffbe) rgba(00ffffbe) rgba(ee00ffbe) rgba(00ffffbe) rgba(ee00ffbe) rgba(00ffffbe) rgba(ee00ffbe) 22deg";
+				"col.active_border" = "rgba(88ffffaa) rgba(cc33ffaa) rgba(ff33aaaa) rgba(ffcc33aa) rgba(77ff55aa) rgba(77ff55aa) rgba(ffcc33aa) rgba(ff33aaaa) rgba(cc33ffaa) rgba(88ffffaa) 22deg";
 				"col.inactive_border" = "rgba(3c3836be)";
 				gaps_in = 5;
 				gaps_out = 5;
@@ -93,14 +93,14 @@
 				"$mainMod, J, togglesplit"
 				"$mainMod, N, exec, swaync-client -t -sw"
 				"$mainMod, L, exec, hyprlock"
-				"$mainMod, left, movefocus, l"
+				"$mainMod,  left, movefocus, l"
 				"$mainMod, right, movefocus, r"
-				"$mainMod, up, movefocus, u"
-				"$mainMod, down, movefocus, d"
-				"$mainMod SHIFT, left, movewindow, l"
+				"$mainMod,    up, movefocus, u"
+				"$mainMod,  down, movefocus, d"
+				"$mainMod SHIFT,  left, movewindow, l"
 				"$mainMod SHIFT, right, movewindow, r"
-				"$mainMod SHIFT, up, movewindow, u"
-				"$mainMod SHIFT, down, movewindow, d"
+				"$mainMod SHIFT,    up, movewindow, u"
+				"$mainMod SHIFT,  down, movewindow, d"
 				"$mainMod, 1, workspace, 1"
 				"$mainMod, 2, workspace, 2"
 				"$mainMod, 3, workspace, 3"
@@ -136,6 +136,7 @@
 				"$mainMod SHIFT, Print, exec, hyprshot -m region -z -o ~/Pictures/Screenshots"
 				"$mainMod, V, exec, $terminal --class=com.ghostty.clipse -e 'clipse'"
 				"$mainMod, C, exec, hyprpicker -a"
+				"$mainMod, M, exec, smile"
 			];
 
 			bindm = [
@@ -144,19 +145,19 @@
 			];
 
 			bindel = [
-				",XF86AudioRaiseVolume, exec, volumectl -u up"
-				",XF86AudioLowerVolume, exec, volumectl -u down"
-				",XF86AudioMute, exec, volumectl toggle-mute"
-				",XF86AudioMicMute, exec, volumectl -m toggle-mute"
-				",XF86MonBrightnessUp, exec, lightctl up"
+				",XF86AudioRaiseVolume,  exec, volumectl -u up"
+				",XF86AudioLowerVolume,  exec, volumectl -u down"
+				",XF86AudioMute,         exec, volumectl toggle-mute"
+				",XF86AudioMicMute,      exec, volumectl -m toggle-mute"
+				",XF86MonBrightnessUp,   exec, lightctl up"
 				",XF86MonBrightnessDown, exec, lightctl down"
 			];
 
 			bindl = [
-				",XF86AudioNext, exec, playerctl next"
+				",XF86AudioNext,  exec, playerctl next"
 				",XF86AudioPause, exec, playerctl play-pause"
-				",XF86AudioPlay, exec, playerctl play-pause"
-				",XF86AudioPrev, exec, playerctl previous"
+				",XF86AudioPlay,  exec, playerctl play-pause"
+				",XF86AudioPrev,  exec, playerctl previous"
 			];
 
 			exec = [
@@ -210,6 +211,8 @@
 			windowrule = [
 				"float,class:(com.ghostty.clipse)"
 				"size 800 600,class:(com.ghostty.clipse)"
+				"float,title:(Smile)"
+				"size 800 600,title:(Smile)"
 			];
 		};
 	};
