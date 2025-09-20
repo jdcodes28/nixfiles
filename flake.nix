@@ -6,7 +6,6 @@
 
 		lanzaboote = {
 			url = "github:nix-community/lanzaboote/v0.4.2";
-
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
@@ -42,7 +41,7 @@
 				home-manager.nixosModules.home-manager {
 					home-manager.useGlobalPkgs = true;
 					home-manager.useUserPackages = true;
-					home-manager.users.nixxer = import ./home;
+					home-manager.users.USER = import ./home;
 				}
 			];
 		};

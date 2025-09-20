@@ -13,7 +13,7 @@
 
     "custom/themes" = {
       format = "THEME SWITCH";
-      on-click = "~/themes.nu";
+      on-click = "~/dots/scripts/themes.nu";
     };
   };
 }

@@ -1,6 +1,11 @@
-{ config, pkgs, ... }: {
-	home.username = "nixxer";
-	home.homeDirectory = "/home/nixxer";
+{ config, pkgs, ... }:
+let
+	name = "USERNAME";
+	machine = "MACHINE";
+in
+{
+	home.username = "${name}";
+	home.homeDirectory = "/home/${name}";
 	home.stateVersion = "25.05";
 
 	home.packages = with pkgs; [
@@ -53,8 +58,8 @@
 	imports = [
 		./programs
 		./programs/hyprland/common.nix
-		./programs/hyprland/MACHINE.nix
+		./programs/hyprland/${machine}.nix
 		./programs/waybar/common.nix
-		./programs/waybar/MACHINE.nix
+		./programs/waybar/${machine}.nix
 	];
 }

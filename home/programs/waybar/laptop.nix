@@ -15,7 +15,7 @@
 
     "custom/themes" = {
       format = "THEME";
-      on-click = "~/themes.nu";
+      on-click = "~/dots/scripts/themes.nu";
     };
 
     "backlight" = {

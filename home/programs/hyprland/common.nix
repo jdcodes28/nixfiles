@@ -173,6 +173,7 @@
 				"swaync"
 				"swaybg -o '*' -m stretch -i $(find ~/Pictures/Wallpapers -type f | shuf -n 1)"
 				"systemctl --user start hyprpolkitagent"
+				"nu ~/dots/scripts/cursor.nu"
 			];
 
 			input = {

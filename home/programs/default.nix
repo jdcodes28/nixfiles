@@ -1,18 +1,20 @@
-{ pkgs, ... }: {
-  programs = {
-    helix = {
-      enable = true;
-      settings = {
-        editor = {
-          line-number = "relative";
-          color-modes = true;
-          indent-guides.render = true;
-          soft-wrap.enable = true;
-          bufferline = "multiple";
-        };
-      };
-    };
+{ config, pkgs, ... }:
+let
+  dots = "${config.home.homeDirectory}/dots/configs";
+  sym = path: config.lib.file.mkOutOfStoreSymlink path;
+  configs = {
+    helix = "helix";
+  };
+in
+{
+  xdg.configFile = builtins.mapAttrs
+  (name: subpath: {
+    source = sym "${dots}/${subpath}";
+    recursive = true;
+  })
+  configs;
 
+  programs = {
     ghostty = {
       enable = true;
       settings = {
