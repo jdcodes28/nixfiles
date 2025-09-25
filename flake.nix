@@ -20,7 +20,7 @@
 		version = "25.05";
 		hostname = "HOSTNAME";
 		user = "USERNAME";
-		machine = "MACHINE"
+		machine = "MACHINE";
 	in
 	{
 		nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
