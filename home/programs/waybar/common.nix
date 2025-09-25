@@ -70,6 +70,11 @@
           format-muted = "MUTED";
           on-click = "pavucontrol";
         };
+
+        "custom/themes" = {
+          format = "THEME";
+          on-click = "~/dots/scripts/themes.nu";
+        };
       };
     };
 

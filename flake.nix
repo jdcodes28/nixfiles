@@ -15,14 +15,23 @@
 		};
 	};
 
-	outputs = { self, nixpkgs, lanzaboote, home-manager, ... }@inputs: {
-		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+	outputs = { self, nixpkgs, lanzaboote, home-manager, ... }@inputs:
+	let
+		version = "25.05";
+		hostname = "HOSTNAME";
+		user = "USERNAME";
+		machine = "MACHINE"
+	in
+	{
+		nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
+			specialArgs = {
+				inherit hostname machine user version;
+			};
 			modules = [
 				./configuration.nix
 				./configs
-				# uncomment if on desktop
-				# ./configs/desktop.nix
+				./configs/${machine}.nix
 
 				lanzaboote.nixosModules.lanzaboote
 				({ pkgs, lib, ... }: {
@@ -41,7 +50,10 @@
 				home-manager.nixosModules.home-manager {
 					home-manager.useGlobalPkgs = true;
 					home-manager.useUserPackages = true;
-					home-manager.users.USER = import ./home;
+					home-manager.users.${user} = import ./home;
+					home-manager.extraSpecialArgs = {
+						inherit hostname machine user version;
+					};
 				}
 			];
 		};
