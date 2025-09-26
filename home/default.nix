@@ -1,9 +1,10 @@
-{ config, pkgs, user, version, machine ... }: {
+{ config, pkgs, user, version, ... }: {
 	home.username = user;
 	home.homeDirectory = "/home/${user}";
 	home.stateVersion = version;
 
 	home.packages = with pkgs; [
+		avizo
 		bat
 		bitwarden
 		brave
@@ -52,9 +53,5 @@
 
 	imports = [
 		./programs
-		./programs/hyprland/common.nix
-		./programs/hyprland/${machine}.nix
-		./programs/waybar/common.nix
-		./programs/waybar/${machine}.nix
 	];
 }

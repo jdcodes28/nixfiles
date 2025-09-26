@@ -1,4 +1,4 @@
-{ ... }: {
+{ machine, ... }: {
   programs.waybar = {
     enable = true;
     settings = {
@@ -234,4 +234,8 @@
       }
     '';
   };
+
+  imports = [
+    ./${machine}.nix
+  ];
 }
