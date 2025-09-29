@@ -1,5 +1,5 @@
 {
-  ghostty = {
+  programs.ghostty = {
     enable = true;
 
     settings = {

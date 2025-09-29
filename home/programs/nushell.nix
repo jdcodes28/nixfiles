@@ -1,5 +1,5 @@
 {
-  nushell = {
+  programs.nushell = {
     enable = true;
 
     shellAliases = {

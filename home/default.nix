@@ -26,19 +26,19 @@
 		hyprpolkitagent
 		hyprshot
 		jujutsu
+		kdePackages.dolphin
 		loupe
 		lunatask
 		meld
 		(mpv.override {
 			scripts = [mpvScripts.mpris];
 		})
-		nautilus
 		networkmanagerapplet
 		pavucontrol
 		playerctl
 		qbittorrent
+		rofimoji
 		rofi-wayland
-		smile
 		swaybg
 		swaynotificationcenter
 		telegram-desktop

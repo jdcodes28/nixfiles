@@ -13,9 +13,14 @@
 			url = "github:nix-community/home-manager/release-25.05";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		dolphin-overlay = {
+			url = "github:rumboon/dolphin-overlay";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = { self, nixpkgs, lanzaboote, home-manager, ... }@inputs:
+	outputs = { self, nixpkgs, lanzaboote, home-manager, dolphin-overlay, ... }@inputs:
 	let
 		version = "25.05";
 		hostname = "HOSTNAME";
@@ -54,6 +59,10 @@
 					home-manager.extraSpecialArgs = {
 						inherit hostname machine user version;
 					};
+				}
+
+				{
+					nixpkgs.overlays = [ dolphin-overlay.overlays.default ];
 				}
 			];
 		};

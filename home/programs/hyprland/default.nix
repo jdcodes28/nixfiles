@@ -4,9 +4,9 @@
 		package = null;
 		portalPackage = null;
 		settings = {
-			"$fileManager" = "nautilus";
+			"$fileManager" = "dolphin";
 			"$mainMod" = "SUPER";
-			"$menu" = "rofi -show combi -combi-modes 'window,drun' -modes combi -show-icons";
+			"$menu" = "rofi";
 			"$terminal" = "ghostty";
 			decoration = {
 				blur = {
@@ -136,7 +136,7 @@
 				"$mainMod SHIFT, Print, exec, hyprshot -m region -z -o ~/Pictures/Screenshots"
 				"$mainMod, V, exec, $terminal --class=com.ghostty.clipse -e 'clipse'"
 				"$mainMod, C, exec, hyprpicker -a"
-				"$mainMod, M, exec, smile"
+				"$mainMod, M, exec, rofimoji -a copy type -s light"
 			];
 
 			bindm = [
