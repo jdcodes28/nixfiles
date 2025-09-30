@@ -6,7 +6,7 @@
 		settings = {
 			"$fileManager" = "dolphin";
 			"$mainMod" = "SUPER";
-			"$menu" = "rofi";
+			"$menu" = "rofi -show";
 			"$terminal" = "ghostty";
 			decoration = {
 				blur = {

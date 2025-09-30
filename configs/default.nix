@@ -1,4 +1,4 @@
-{ config, pkgs, ...}: {
+{ config, pkgs, user, ...}: {
 	hardware.graphics.enable = true;
 	
 	programs = {
@@ -34,9 +34,14 @@
 		};
 	};
 
+	fonts.fontconfig = {
+		hinting.style = "full";
+		subpixel.rgba = "rgb";
+	};
+
 	environment.shells = [ pkgs.nushell ];
 
-	users.users.nixxer.shell = pkgs.nushell;
+	users.users.${user}.shell = pkgs.nushell;
 
 	xdg.portal = {
 		enable = true;
