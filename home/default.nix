@@ -13,10 +13,15 @@
 		catppuccin-cursors.mochaDark
 		chromium
 		clipse
+		collision
+		ente-auth
 		evince
 		eza
 		fastfetch
 		fzf
+		gnome-calculator
+		gnome-characters
+		gnome-clocks
 		grim
 		helix
 		hyprcursor

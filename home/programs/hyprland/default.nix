@@ -171,7 +171,7 @@
 				"nm-applet --indicator"
 				"hypridle"
 				"swaync"
-				"swaybg -o '*' -m stretch -i $(find ~/Pictures/Wallpapers -type f | shuf -n 1)"
+				"swaybg -o '*' -m stretch -i $(find ~/Pictures/Wallpapers -maxdepth 1 -type f | shuf -n 1)"
 				"systemctl --user start hyprpolkitagent"
 				"nu ~/dots/scripts/cursor.nu"
 			];
