@@ -199,7 +199,6 @@
 				"QT_QPA_PLATFORMTHEME,gnome"
 				"QT_QUICK_CONTROLS_STYLE,org.hyprland.style"
 				"QT_AUTO_SCREEN_SCALE_FACTOR,1"
-				"QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
 				"GDK_SCALE,1"
 				"QT_SCALE_FACTOR,1"
 				"MOZ_ENABLE_WAYLAND,1"
@@ -212,8 +211,7 @@
 			windowrule = [
 				"float,class:(com.ghostty.clipse)"
 				"size 800 600,class:(com.ghostty.clipse)"
-				"float,title:(Smile)"
-				"size 800 600,title:(Smile)"
+				"float,class:(mpv)"
 			];
 		};
 	};

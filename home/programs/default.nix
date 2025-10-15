@@ -3,8 +3,9 @@ let
   dots = "${config.home.homeDirectory}/dots/configs";
   sym = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
-    rofi = "rofi";
+    clipse = "clipse";
     helix = "helix";
+    rofi = "rofi";
   };
 in
 {
