@@ -5,6 +5,7 @@ let
   configs = {
     clipse = "clipse";
     helix = "helix";
+    niri = "niri";
     rofi = "rofi";
   };
 in
