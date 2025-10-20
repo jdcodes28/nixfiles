@@ -8,6 +8,8 @@
 				xwayland.enable = true;
 		};
 
+		niri.enable = true;
+
 		steam = {
 			enable = true;
 			remotePlay.openFirewall = true;
@@ -25,6 +27,7 @@
 	};
 
 	services = {
+		gnome.gnome-keyring.enable = true;
 		gvfs.enable = true;
 		tumbler.enable = true;
 
@@ -46,6 +49,7 @@
 	xdg.portal = {
 		enable = true;
 		extraPortals = with pkgs; [
+			xdg-desktop-portal-gnome
 			xdg-desktop-portal-hyprland
 		];
 	};

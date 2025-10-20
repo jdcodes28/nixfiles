@@ -22,16 +22,17 @@
 
 	outputs = { self, nixpkgs, lanzaboote, home-manager, dolphin-overlay, ... }@inputs:
 	let
-		version = "25.05";
 		hostname = "HOSTNAME";
-		user = "USERNAME";
 		machine = "MACHINE";
+		user = "USERNAME";
+		version = "25.05";
+		wm = "niri";
 	in
 	{
 		nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			specialArgs = {
-				inherit hostname machine user version;
+				inherit hostname machine user version wm;
 			};
 			modules = [
 				./configuration.nix
@@ -57,7 +58,7 @@
 					home-manager.useUserPackages = true;
 					home-manager.users.${user} = import ./home;
 					home-manager.extraSpecialArgs = {
-						inherit hostname machine user version;
+						inherit hostname machine user version wm;
 					};
 				}
 

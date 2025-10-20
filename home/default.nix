@@ -55,6 +55,7 @@
 	];
 
 	dconf.enable = true;
+	services.polkit-gnome.enable = true;
 
 	imports = [
 		./programs

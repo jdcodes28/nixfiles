@@ -1,16 +1,21 @@
-{ machine, ... }: {
+{ machine, wm, ... }: {
   programs.waybar = {
     enable = true;
     settings = {
       mainBar = {
         height = 20;
         layer = "top";
-        modules-left = ["hyprland/workspaces"];
+        modules-left = ["${wm}/workspaces"];
 
         "hyprland/workspaces" = {
           format = "{name}";
           all-outputs = true;
           on-click = "activate";
+        };
+
+        "niri/workspaces" = {
+          all-outputs = true;
+          format = "{value}";
         };
 
         "temperature" = {
