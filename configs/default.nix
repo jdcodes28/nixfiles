@@ -41,6 +41,10 @@
 		enable = true;
 		antialias = true;
 
+		defaultFonts = {
+			sansSerif = [ "Inter Variable" ];
+		};
+
 		hinting = {
 			enable = true;
 			autohint = false;

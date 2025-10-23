@@ -31,6 +31,7 @@
 		hyprpicker
 		hyprpolkitagent
 		hyprshot
+		inter
 		jujutsu
 		kdePackages.dolphin
 		loupe
