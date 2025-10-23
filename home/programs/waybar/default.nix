@@ -5,7 +5,7 @@
       mainBar = {
         height = 20;
         layer = "top";
-        modules-left = ["${wm}/workspaces"];
+        modules-left = ["hyprland/workspaces" "niri/workspaces"];
 
         "hyprland/workspaces" = {
           format = "{name}";
@@ -14,7 +14,6 @@
         };
 
         "niri/workspaces" = {
-          all-outputs = true;
           format = "{value}";
         };
 

@@ -26,13 +26,12 @@
 		machine = "MACHINE";
 		user = "USERNAME";
 		version = "25.05";
-		wm = "niri";
 	in
 	{
 		nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			specialArgs = {
-				inherit hostname machine user version wm;
+				inherit hostname machine user version;
 			};
 			modules = [
 				./configuration.nix
@@ -58,7 +57,7 @@
 					home-manager.useUserPackages = true;
 					home-manager.users.${user} = import ./home;
 					home-manager.extraSpecialArgs = {
-						inherit hostname machine user version wm;
+						inherit hostname machine user version;
 					};
 				}
 

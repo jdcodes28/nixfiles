@@ -4,6 +4,7 @@
 	home.stateVersion = version;
 
 	home.packages = with pkgs; [
+		anki
 		avizo
 		bat
 		bitwarden
@@ -38,6 +39,7 @@
 		(mpv.override {
 			scripts = [mpvScripts.mpris];
 		})
+		nautilus
 		networkmanagerapplet
 		pavucontrol
 		playerctl
@@ -55,7 +57,6 @@
 	];
 
 	dconf.enable = true;
-	services.polkit-gnome.enable = true;
 
 	imports = [
 		./programs

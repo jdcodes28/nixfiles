@@ -38,8 +38,19 @@
 	};
 
 	fonts.fontconfig = {
-		hinting.style = "full";
-		subpixel.rgba = "rgb";
+		enable = true;
+		antialias = true;
+
+		hinting = {
+			enable = true;
+			autohint = false;
+			style = "full";
+		};
+
+		subpixel = {
+			lcdfilter = "default";
+			rgba = "rgb";
+		};
 	};
 
 	environment.shells = [ pkgs.nushell ];
@@ -50,6 +61,7 @@
 		enable = true;
 		extraPortals = with pkgs; [
 			xdg-desktop-portal-gnome
+			xdg-desktop-portal-gtk
 			xdg-desktop-portal-hyprland
 		];
 	};
