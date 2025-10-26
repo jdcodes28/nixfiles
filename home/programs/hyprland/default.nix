@@ -171,7 +171,7 @@
 				"nm-applet --indicator"
 				"hypridle"
 				"swaync"
-				"find ~/Pictures/Wallpapers -maxdepth 1 -type f -print0 | shuf -z -n 1 | xargs -0 swaybg -o '*' -m stretch -i"
+				"bash ~/dots/scripts/wallpaper_randomizer.sh"
 				"systemctl --user start hyprpolkitagent"
 				"nu ~/dots/scripts/cursor.nu"
 			];
