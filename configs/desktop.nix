@@ -13,7 +13,7 @@
     nvidia = {
       open = true;
       modesetting.enable = true;
-    }
+    };
   };
 
   environment.variables = {
