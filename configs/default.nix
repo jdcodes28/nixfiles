@@ -31,9 +31,13 @@
 		gvfs.enable = true;
 		tumbler.enable = true;
 
-		xserver.displayManager.gdm = {
+		xserver = {
 			enable = true;
-			wayland = true;
+
+			displayManager.gdm = {
+				enable = true;
+				wayland = true;
+			};
 		};
 	};
 
@@ -63,6 +67,7 @@
 
 	xdg.portal = {
 		enable = true;
+
 		extraPortals = with pkgs; [
 			xdg-desktop-portal-gnome
 			xdg-desktop-portal-gtk

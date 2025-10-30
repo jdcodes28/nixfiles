@@ -54,6 +54,7 @@
 		wl-clip-persist
 		wl-clipboard
 		wlsunset
+		xwayland-satellite
 		zoxide
 	];
 
@@ -61,5 +62,6 @@
 
 	imports = [
 		./programs
+		./xdg.nix
 	];
 }
