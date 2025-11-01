@@ -4,9 +4,9 @@ let
   sym = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
     clipse = "clipse";
-    helix = "helix";
-    niri = "niri";
-    rofi = "rofi";
+    helix  = "helix";
+    niri   = "niri";
+    rofi   = "rofi";
   };
 in
 {

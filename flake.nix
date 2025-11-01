@@ -23,9 +23,9 @@
 	outputs = { self, nixpkgs, lanzaboote, home-manager, dolphin-overlay, ... }@inputs:
 	let
 		hostname = "HOSTNAME";
-		machine = "MACHINE";
-		user = "USERNAME";
-		version = "25.05";
+		machine  = "MACHINE";
+		user     = "USERNAME";
+		version  = "25.05";
 	in
 	{
 		nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
