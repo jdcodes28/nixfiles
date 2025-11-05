@@ -4,6 +4,8 @@
 	home.stateVersion = version;
 
 	home.packages = with pkgs; [
+		_1password-cli
+		_1password-gui
 		anki
 		avizo
 		bat

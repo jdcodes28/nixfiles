@@ -40,8 +40,10 @@ in
 
   imports = [
     ./ghostty.nix
+    ./git.nix
     ./hyprlock.nix
     ./nushell.nix
+    ./ssh.nix
     ./starship.nix
     ./hyprland
     ./waybar
