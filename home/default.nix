@@ -18,7 +18,6 @@
 		clipse
 		collision
 		ente-auth
-		evince
 		eza
 		fastfetch
 		fzf
@@ -44,6 +43,7 @@
 		})
 		nautilus
 		networkmanagerapplet
+		papers
 		pavucontrol
 		playerctl
 		qbittorrent
