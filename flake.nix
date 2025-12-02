@@ -2,15 +2,10 @@
 	description = "muh NixOS config flake";
 
 	inputs = {
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-
-		lanzaboote = {
-			url = "github:nix-community/lanzaboote/v0.4.2";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
 		home-manager = {
-			url = "github:nix-community/home-manager/release-25.05";
+			url = "github:nix-community/home-manager/release-25.11";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
@@ -20,12 +15,12 @@
 		};
 	};
 
-	outputs = { self, nixpkgs, lanzaboote, home-manager, dolphin-overlay, ... }@inputs:
+	outputs = { self, nixpkgs, home-manager, dolphin-overlay, ... }@inputs:
 	let
 		hostname = "HOSTNAME";
 		machine  = "MACHINE";
 		user     = "USERNAME";
-		version  = "25.05";
+		version  = "25.11";
 	in
 	{
 		nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
@@ -37,20 +32,6 @@
 				./configuration.nix
 				./configs
 				./configs/${machine}.nix
-
-				lanzaboote.nixosModules.lanzaboote
-				({ pkgs, lib, ... }: {
-					environment.systemPackages = [
-						pkgs.sbctl
-					];
-					boot = {
-						loader.systemd-boot.enable = lib.mkForce false;
-						lanzaboote = {
-							enable = true;
-							pkiBundle = "/var/lib/sbctl";
-						};
-					};
-				})
 
 				home-manager.nixosModules.home-manager {
 					home-manager.useGlobalPkgs = true;

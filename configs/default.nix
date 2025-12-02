@@ -16,7 +16,6 @@
 			dedicatedServer.openFirewall = true;
 		};
 
-		file-roller.enable = true;
 		xwayland.enable = true;
 	};
 
@@ -31,13 +30,9 @@
 		gvfs.enable = true;
 		tumbler.enable = true;
 
-		xserver = {
+		displayManager.gdm = {
 			enable = true;
-
-			displayManager.gdm = {
-				enable = true;
-				wayland = true;
-			};
+			wayland = true;
 		};
 	};
 
@@ -46,7 +41,7 @@
 		antialias = true;
 
 		defaultFonts = {
-			sansSerif = [ "Inter Variable" ];
+			sansSerif = [ "Inter" ];
 		};
 
 		hinting = {

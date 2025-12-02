@@ -9,7 +9,7 @@
 		anki
 		avizo
 		bat
-		bitwarden
+		bitwarden-desktop
 		brave
 		brightnessctl
 		catppuccin-cursors.latteLight
@@ -20,6 +20,7 @@
 		ente-auth
 		eza
 		fastfetch
+		file-roller
 		fzf
 		gnome-calculator
 		gnome-characters
@@ -48,7 +49,7 @@
 		playerctl
 		qbittorrent
 		rofimoji
-		rofi-wayland
+		rofi
 		swaybg
 		swaynotificationcenter
 		telegram-desktop
