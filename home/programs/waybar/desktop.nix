@@ -10,5 +10,7 @@
       "clock"
       "tray"
     ];
+
+    "clock".format = "{:%D %R}";
   };
 }

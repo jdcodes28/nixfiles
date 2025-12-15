@@ -32,5 +32,8 @@
       format = "BAT: {capacity}%";
       format-alt = "BAT: {time}";
     };
+
+    
+    "clock".format = "{:%R}";
   };
 }

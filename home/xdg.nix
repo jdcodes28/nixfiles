@@ -1,7 +1,7 @@
 let
   archiveManager = "org.gnome.FileRoller.desktop";
   browser        = "brave-browser.desktop";
-  documentReader = "org.gnome.Papers.desktop";
+  documentReader = "org.kde.okular.desktop";
   imageViewer    = "org.gnome.Loupe.desktop";
   videoPlayer    = "mpv.desktop";
 in

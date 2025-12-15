@@ -3,10 +3,12 @@ let
   dots = "${config.home.homeDirectory}/dots/configs";
   sym = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
-    clipse = "clipse";
-    helix  = "helix";
-    niri   = "niri";
-    rofi   = "rofi";
+    clipse       = "clipse";
+    dolphinrc    = "dolphinrc";
+    helix        = "helix";
+    niri         = "niri";
+    okularpartrc = "okularpartrc";
+    rofi         = "rofi";
   };
 in
 {

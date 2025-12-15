@@ -31,7 +31,6 @@
         };
 
         "clock" = {
-          format = "{:%D %R}";
           tooltip-format = "<tt>{calendar}</tt>";
           calendar = {
             mode = "year";

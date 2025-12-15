@@ -19,6 +19,7 @@
 		collision
 		ente-auth
 		eza
+		fantasque-sans-mono
 		fastfetch
 		file-roller
 		fzf
@@ -35,7 +36,14 @@
 		hyprshot
 		inter
 		jujutsu
+		kdePackages.breeze
+		kdePackages.breeze-gtk
 		kdePackages.dolphin
+		kdePackages.kweather
+		kdePackages.okular
+		kdePackages.plasma-systemmonitor
+		krita
+		libreoffice-qt-fresh
 		loupe
 		lunatask
 		meld
@@ -44,7 +52,6 @@
 		})
 		nautilus
 		networkmanagerapplet
-		papers
 		pavucontrol
 		playerctl
 		qbittorrent
