@@ -3,16 +3,16 @@
 	
 	programs = {
 		hyprland = {
-				enable = true;
-				withUWSM = true;
+				enable          = true;
+				withUWSM        = true;
 				xwayland.enable = true;
 		};
 
 		niri.enable = true;
 
 		steam = {
-			enable = true;
-			remotePlay.openFirewall = true;
+			enable                       = true;
+			remotePlay.openFirewall      = true;
 			dedicatedServer.openFirewall = true;
 		};
 
@@ -20,19 +20,27 @@
 	};
 
 	security = {
-		rtkit.enable = true;
-		polkit.enable = true;
+		rtkit.enable          = true;
+		polkit.enable         = true;
 		pam.services.hyprlock = {};
 	};
 
 	services = {
+		fstrim.enable              = true;
 		gnome.gnome-keyring.enable = true;
-		gvfs.enable = true;
-		tumbler.enable = true;
+		gvfs.enable                = true;
+		tumbler.enable             = true;
 
-		displayManager.gdm = {
+		displayManager.ly = {
 			enable = true;
-			wayland = true;
+
+			settings = {
+				animation        = "matrix";
+				biglock          = "en";
+				bigclock_seconds = true;
+				clear_password   = true;
+				save_file        = "/etc/ly/save";
+			};
 		};
 	};
 
@@ -45,14 +53,14 @@
 		};
 
 		hinting = {
-			enable = true;
+			enable   = true;
 			autohint = false;
-			style = "full";
+			style    = "full";
 		};
 
 		subpixel = {
 			lcdfilter = "default";
-			rgba = "rgb";
+			rgba      = "rgb";
 		};
 	};
 

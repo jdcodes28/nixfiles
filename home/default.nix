@@ -12,6 +12,7 @@
 		bitwarden-desktop
 		brave
 		brightnessctl
+		btop
 		catppuccin-cursors.latteLight
 		catppuccin-cursors.mochaDark
 		chromium
@@ -41,7 +42,6 @@
 		kdePackages.dolphin
 		kdePackages.kweather
 		kdePackages.okular
-		kdePackages.plasma-systemmonitor
 		krita
 		libreoffice-qt-fresh
 		loupe
@@ -55,17 +55,20 @@
 		pavucontrol
 		playerctl
 		qbittorrent
+		ripgrep
 		rofimoji
 		rofi
 		swaybg
 		swaynotificationcenter
 		telegram-desktop
+		unrar
 		vivaldi
 		wl-clip-persist
 		wl-clipboard
 		wlsunset
 		xwayland-satellite
 		zoxide
+		zellij
 	];
 
 	dconf.enable = true;

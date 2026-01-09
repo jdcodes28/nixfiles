@@ -3,12 +3,14 @@ let
   dots = "${config.home.homeDirectory}/dots/configs";
   sym = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
+    btop         = "btop";
     clipse       = "clipse";
     dolphinrc    = "dolphinrc";
     helix        = "helix";
     niri         = "niri";
     okularpartrc = "okularpartrc";
     rofi         = "rofi";
+    zellij       = "zellij";
   };
 in
 {
@@ -36,8 +38,6 @@ in
       enable = true;
       package = pkgs.vscode.fhs;
     };
-
-    yazi.enable = true;
   };
 
   imports = [
@@ -49,5 +49,6 @@ in
     ./starship.nix
     ./hyprland
     ./waybar
+    ./yazi.nix
   ];
 }

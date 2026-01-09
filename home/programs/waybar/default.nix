@@ -73,17 +73,12 @@
           format-muted = "MUTED";
           on-click = "pavucontrol";
         };
-
-        "custom/themes" = {
-          format = "THEME";
-          on-click = "~/dots/scripts/themes.nu";
-        };
       };
     };
 
     style = ''
       * {
-        font-family: TX-02;
+        font-family: TX-02, Mono Lisa Variable, Fantasque Sans Mono;
         font-size: 12pt;
       }
 
