@@ -1,4 +1,11 @@
-{ config, pkgs, user, version, ... }: {
+{
+	config,
+	pkgs,
+	user,
+	version,
+	inputs,
+	...
+}: {
 	home.username = user;
 	home.homeDirectory = "/home/${user}";
 	home.stateVersion = version;
@@ -7,6 +14,7 @@
 		_1password-cli
 		_1password-gui
 		anki
+		antigravity-fhs
 		avizo
 		bat
 		bitwarden-desktop
@@ -16,6 +24,7 @@
 		catppuccin-cursors.latteLight
 		catppuccin-cursors.mochaDark
 		chromium
+		claude-code
 		clipse
 		collision
 		ente-auth
@@ -24,10 +33,12 @@
 		fastfetch
 		file-roller
 		fzf
+		gemini-cli
 		gnome-calculator
 		gnome-characters
 		gnome-clocks
 		grim
+		haruna
 		helix
 		hyprcursor
 		hypridle
@@ -35,11 +46,12 @@
 		hyprpicker
 		hyprpolkitagent
 		hyprshot
+		inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
+		inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 		inter
 		jujutsu
 		kdePackages.breeze
 		kdePackages.breeze-gtk
-		kdePackages.dolphin
 		kdePackages.kweather
 		kdePackages.okular
 		krita
@@ -52,12 +64,14 @@
 		})
 		nautilus
 		networkmanagerapplet
+		opencode
 		pavucontrol
 		playerctl
 		qbittorrent
 		ripgrep
 		rofimoji
 		rofi
+		sioyek
 		swaybg
 		swaynotificationcenter
 		telegram-desktop
@@ -67,8 +81,9 @@
 		wl-clipboard
 		wlsunset
 		xwayland-satellite
-		zoxide
+		zed-editor
 		zellij
+		zoxide
 	];
 
 	dconf.enable = true;

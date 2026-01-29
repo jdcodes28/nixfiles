@@ -4,7 +4,7 @@
 		package = null;
 		portalPackage = null;
 		settings = {
-			"$fileManager" = "dolphin";
+			"$fileManager" = "thunar";
 			"$mainMod" = "SUPER";
 			"$menu" = "rofi -show";
 			"$terminal" = "ghostty";

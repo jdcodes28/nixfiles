@@ -5,7 +5,6 @@ let
   configs = {
     btop         = "btop";
     clipse       = "clipse";
-    dolphinrc    = "dolphinrc";
     helix        = "helix";
     niri         = "niri";
     okularpartrc = "okularpartrc";
@@ -45,6 +44,7 @@ in
     ./git.nix
     ./hyprlock.nix
     ./nushell.nix
+    ./obs
     ./ssh.nix
     ./starship.nix
     ./hyprland
