@@ -7,6 +7,7 @@
 
       extraPackages = with pkgs; [
         egl-wayland
+        mesa
         nvidia-vaapi-driver
       ];
     };

@@ -4,6 +4,11 @@
 	inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+		claude-code = {
+			url = "github:sadjow/claude-code-nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 		helium = {
 			url = "github:vikingnope/helium-browser-nix-flake";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -37,6 +42,10 @@
 				./configuration.nix
 				./configs
 				./configs/${machine}.nix
+
+				{
+					nixpkgs.overlays = [ inputs.claude-code.overlays.default ];
+				}
 
 				home-manager.nixosModules.home-manager {
 					home-manager.useGlobalPkgs = true;

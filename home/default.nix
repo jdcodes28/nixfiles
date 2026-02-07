@@ -49,6 +49,7 @@
 		inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
 		inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 		inter
+		iosevka
 		jujutsu
 		kdePackages.breeze
 		kdePackages.breeze-gtk
@@ -66,12 +67,12 @@
 		networkmanagerapplet
 		opencode
 		pavucontrol
+		picocrypt-ng
 		playerctl
 		qbittorrent
 		ripgrep
 		rofimoji
 		rofi
-		sioyek
 		swaybg
 		swaynotificationcenter
 		telegram-desktop
@@ -81,6 +82,7 @@
 		wl-clipboard
 		wlsunset
 		xwayland-satellite
+		zathura
 		zed-editor
 		zellij
 		zoxide
