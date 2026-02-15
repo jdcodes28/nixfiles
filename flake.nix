@@ -19,13 +19,26 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+
+		noctalia = {
+			url = "github:noctalia-dev/noctalia-shell";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 		zen-browser = {
 			url = "github:youwen5/zen-browser-flake";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 	};
 
-	outputs = { self, nixpkgs, home-manager, ... }@inputs:
+	outputs = {
+		self,
+		nixpkgs,
+		nix-cachyos-kernel,
+		home-manager,
+		...
+	}@inputs:
 	let
 		hostname = "HOSTNAME";
 		machine  = "MACHINE";
@@ -42,9 +55,16 @@
 				./configuration.nix
 				./configs
 				./configs/${machine}.nix
+				./noctalia.nix
 
 				{
-					nixpkgs.overlays = [ inputs.claude-code.overlays.default ];
+					nixpkgs.overlays = [
+						inputs.claude-code.overlays.default
+						nix-cachyos-kernel.overlays.pinned
+					];
+
+					nix.settings.substituters = [ "https://cache.garnix.io" ];
+					nix.settings.trusted-public-keys = [ "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=" ];
 				}
 
 				home-manager.nixosModules.home-manager {

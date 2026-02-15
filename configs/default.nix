@@ -56,6 +56,14 @@
 		};
 	};
 
+	fonts.packages = with pkgs; [
+		fantasque-sans-mono
+		inter
+		nerd-fonts.iosevka
+		noto-fonts-sjk-sans
+		noto-fonts-sjk-serif
+	];
+
 	fonts.fontconfig = {
 		enable = true;
 		antialias = true;

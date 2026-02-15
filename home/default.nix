@@ -29,7 +29,6 @@
 		collision
 		ente-auth
 		eza
-		fantasque-sans-mono
 		fastfetch
 		file-roller
 		fzf
@@ -37,6 +36,7 @@
 		gnome-calculator
 		gnome-characters
 		gnome-clocks
+		google-chrome
 		grim
 		haruna
 		helix
@@ -48,8 +48,6 @@
 		hyprshot
 		inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
 		inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-		inter
-		iosevka
 		jujutsu
 		kdePackages.breeze
 		kdePackages.breeze-gtk
