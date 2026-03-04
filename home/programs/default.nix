@@ -5,6 +5,7 @@ let
   configs = {
     btop         = "btop";
     clipse       = "clipse";
+    ghostty      = "ghostty";
     helix        = "helix";
     niri         = "niri";
     okularpartrc = "okularpartrc";
@@ -33,6 +34,8 @@ in
       enableNushellIntegration = true;
     };
 
+    ghostty.enable = true;
+
     vscode = {
       enable = true;
       package = pkgs.vscode.fhs;
@@ -40,7 +43,7 @@ in
   };
 
   imports = [
-    ./ghostty.nix
+    # ./ghostty.nix
     ./git.nix
     ./hyprlock.nix
     ./nushell.nix

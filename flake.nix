@@ -9,6 +9,8 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		codex-cli.url = "github:sadjow/codex-cli-nix";
+
 		helium = {
 			url = "github:vikingnope/helium-browser-nix-flake";
 			inputs.nixpkgs.follows = "nixpkgs";

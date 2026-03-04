@@ -46,6 +46,7 @@
 		hyprpicker
 		hyprpolkitagent
 		hyprshot
+		inputs.codex-cli.packages.${pkgs.system}.default
 		inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
 		inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 		jujutsu
@@ -74,6 +75,7 @@
 		swaybg
 		swaynotificationcenter
 		telegram-desktop
+		tree
 		unrar
 		vivaldi
 		wl-clip-persist

@@ -60,8 +60,8 @@
 		fantasque-sans-mono
 		inter
 		nerd-fonts.iosevka
-		noto-fonts-sjk-sans
-		noto-fonts-sjk-serif
+		noto-fonts-cjk-sans
+		noto-fonts-cjk-serif
 	];
 
 	fonts.fontconfig = {
