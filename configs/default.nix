@@ -88,6 +88,16 @@
 
 	users.users.${user}.shell = pkgs.nushell;
 
+	virtualisation.docker = {
+		enable = true;
+		enableOnBoot = true;
+
+		rootless = {
+			enable = true;
+			setSocketVariable = true;
+		};
+	};
+
 	xdg.portal = {
 		enable = true;
 
