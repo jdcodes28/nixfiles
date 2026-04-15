@@ -21,6 +21,12 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		niri = {
+			url = "github:niri-wm/niri/wip/branch";
+			inputs.nixpkgs.follows = "nixpkgs";
+			inputs.rust-overlay.follows = "";
+		};
+
 		nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
 		noctalia = {
@@ -36,6 +42,7 @@
 
 	outputs = {
 		self,
+		niri,
 		nixpkgs,
 		nix-cachyos-kernel,
 		home-manager,
@@ -51,13 +58,12 @@
 		nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			specialArgs = {
-				inherit hostname machine user version;
+				inherit hostname machine niri user version;
 			};
 			modules = [
 				./configuration.nix
 				./configs
 				./configs/${machine}.nix
-				./noctalia.nix
 
 				{
 					nixpkgs.overlays = [

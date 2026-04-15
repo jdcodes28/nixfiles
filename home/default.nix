@@ -54,6 +54,7 @@
 		kdePackages.breeze-gtk
 		kdePackages.kweather
 		kdePackages.okular
+		keepassxc
 		krita
 		libreoffice-qt-fresh
 		loupe
@@ -91,6 +92,7 @@
 	dconf.enable = true;
 
 	imports = [
+		inputs.noctalia.homeModules.default
 		./programs
 		./xdg.nix
 	];

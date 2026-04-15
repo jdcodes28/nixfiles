@@ -1,4 +1,10 @@
-{ config, pkgs, user, ...}: {
+{
+	config,
+	pkgs,
+	user,
+	niri,
+	...
+}: {
 	hardware.graphics.enable = true;
 	
 	programs = {
@@ -9,6 +15,7 @@
 		};
 
 		niri.enable = true;
+		niri.package = niri.packages.${pkgs.stdenv.hostPlatform.system}.niri;
 
 		steam = {
 			enable                       = true;
@@ -38,22 +45,11 @@
 	};
 
 	services = {
+		displayManager.gdm.enable  = true;
 		fstrim.enable              = true;
 		gnome.gnome-keyring.enable = true;
 		gvfs.enable                = true;
 		tumbler.enable             = true;
-
-		displayManager.ly = {
-			enable = true;
-
-			settings = {
-				animation        = "matrix";
-				biglock          = "en";
-				bigclock_seconds = true;
-				clear_password   = true;
-				save_file        = "/etc/ly/save";
-			};
-		};
 	};
 
 	fonts.packages = with pkgs; [

@@ -43,9 +43,9 @@ in
   };
 
   imports = [
-    # ./ghostty.nix
     ./git.nix
     ./hyprlock.nix
+    ./noctalia.nix
     ./nushell.nix
     ./obs
     ./ssh.nix
