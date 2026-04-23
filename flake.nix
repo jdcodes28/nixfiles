@@ -4,6 +4,11 @@
 	inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+		brave-previews = {
+			url = "github:drishal/brave-browser-flake";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 		claude-code = {
 			url = "github:sadjow/claude-code-nix";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -22,7 +27,7 @@
 		};
 
 		niri = {
-			url = "github:niri-wm/niri/wip/branch";
+			url = "github:niri-wm/niri/main";
 			inputs.nixpkgs.follows = "nixpkgs";
 			inputs.rust-overlay.follows = "";
 		};
@@ -42,10 +47,11 @@
 
 	outputs = {
 		self,
+		brave-previews,
+		home-manager,
 		niri,
 		nixpkgs,
 		nix-cachyos-kernel,
-		home-manager,
 		...
 	}@inputs:
 	let
@@ -80,7 +86,7 @@
 					home-manager.useUserPackages = true;
 					home-manager.users.${user} = import ./home;
 					home-manager.extraSpecialArgs = {
-						inherit hostname machine user version inputs;
+						inherit brave-previews hostname inputs machine user version;
 					};
 				}
 			];

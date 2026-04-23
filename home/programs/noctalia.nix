@@ -126,15 +126,10 @@
                 blacklist = [];
                 chevronColor = "none";
                 colorizeIcons = false;
-                drawerEnabled = true;
+                drawerEnabled = false;
                 hidePassive = false;
                 id = "Tray";
-                pinned = [
-                  "DL speed: 0 B/s\nUP speed: 0 B/s"
-                  "1Password"
-                  "Telegram Desktop"
-                  "DL speed: 275.0 MiB/s\nUP speed: 0 B/s"
-                ];
+                pinned = [];
               }
 
               {
@@ -148,7 +143,7 @@
 
               {
                 deviceNativePath = "__default__";
-                displayMode = "graphic-clean";
+                displayMode = "graphic";
                 hideIfIdle = false;
                 hideIfNotDetected = true;
                 id = "Battery";
@@ -243,7 +238,7 @@
           passwordChars = true;
           lockScreenMonitors = [];
           lockScreenBlur = 0.33;
-          lockScreenTint = 0.33;
+          lockScreenTint = 0.75;
 
           keybinds = {
             keyUp = [
@@ -518,7 +513,7 @@
           position = "bottom";
           displayMode = "always_visible";
           dockType = "floating";
-          backgroundOpacity = 1;
+          backgroundOpacity = 0.75;
           floatingRatio = 1;
           size = 1;
           onlySameOutput = true;

@@ -1,6 +1,6 @@
 let
   archiveManager = "org.gnome.FileRoller.desktop";
-  browser        = "brave-browser.desktop";
+  browser        = "brave-origin-nightly.desktop";
   documentReader = "org.pwmt.zathura.desktop";
   imageViewer    = "org.gnome.Loupe.desktop";
   videoPlayer    = "mpv.desktop";

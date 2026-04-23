@@ -1,9 +1,10 @@
 {
+	brave-previews,
 	config,
+	inputs,
 	pkgs,
 	user,
 	version,
-	inputs,
 	...
 }: {
 	home.username = user;
@@ -19,10 +20,9 @@
 		bat
 		bitwarden-desktop
 		brave
+		brave-previews.packages.${pkgs.system}.brave-origin-nightly
 		brightnessctl
 		btop
-		catppuccin-cursors.latteLight
-		catppuccin-cursors.mochaDark
 		chromium
 		claude-code
 		clipse
@@ -79,6 +79,7 @@
 		tree
 		unrar
 		vivaldi
+		volantes-cursors
 		wl-clip-persist
 		wl-clipboard
 		wlsunset
