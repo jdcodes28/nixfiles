@@ -529,7 +529,7 @@
           inactiveIndicators = true;
           groupApps = false;
           groupContextMenuMode = "extended";
-          groupClickAction = "cycle";
+          groupClickAction = "list";
           groupIndicatorStyle = "dots";
           deadOpacity = 0.6;
           animationSpeed = 1;
