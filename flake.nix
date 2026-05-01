@@ -26,12 +26,6 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		niri = {
-			url = "github:niri-wm/niri/main";
-			inputs.nixpkgs.follows = "nixpkgs";
-			inputs.rust-overlay.follows = "";
-		};
-
 		nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
 		noctalia = {
@@ -49,47 +43,70 @@
 		self,
 		brave-previews,
 		home-manager,
-		niri,
 		nixpkgs,
 		nix-cachyos-kernel,
 		...
 	}@inputs:
 	let
-		hostname = "HOSTNAME";
-		machine  = "MACHINE";
-		user     = "USERNAME";
-		version  = "25.11";
-	in
-	{
-		nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-			system = "x86_64-linux";
+		machines = {
+			charon.type = "laptop";
+			hydra.type = "desktop";
+		};
+
+		user = "USER";
+
+		mkSystem = name: cfg: nixpkgs.lib.nixosSystem {
+			system = cfg.system or "x86_64-linux";
+
 			specialArgs = {
-				inherit hostname machine niri user version;
+				inherit user;
+				machineName = name;
+				machineType = cfg.type;
+				headless = cfg.headless or false;
 			};
+
 			modules = [
-				./configuration.nix
 				./configs
-				./configs/${machine}.nix
 
 				{
+					networking.hostName = name;
+
 					nixpkgs.overlays = [
 						inputs.claude-code.overlays.default
 						nix-cachyos-kernel.overlays.pinned
 					];
 
-					nix.settings.substituters = [ "https://cache.garnix.io" ];
-					nix.settings.trusted-public-keys = [ "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=" ];
+					nix.settings = {
+						extra-substituters = [
+							"https://cache.garnix.io"
+							"https://attic.xuyh0120.win/lantian"
+						];
+
+						extra-trusted-public-keys = [
+							"cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+							"lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+						];
+					};
 				}
 
-				home-manager.nixosModules.home-manager {
+				home-manager.nixosModules.home-manager
+
+				{
 					home-manager.useGlobalPkgs = true;
 					home-manager.useUserPackages = true;
 					home-manager.users.${user} = import ./home;
+
 					home-manager.extraSpecialArgs = {
-						inherit brave-previews hostname inputs machine user version;
+						inherit brave-previews inputs user;
+						machineName = name;
+						machineType = cfg.type;
+						headless = cfg.headless or false;
 					};
 				}
 			];
 		};
+	in
+	{
+		nixosConfigurations = nixpkgs.lib.mapAttrs mkSystem machines;
 	};
 }

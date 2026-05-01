@@ -1,0 +1,84 @@
+{
+  brave-previews,
+  inputs,
+  pkgs,
+  user,
+  ...
+}: {
+  home.packages = with pkgs; [
+    _1password-cli
+    _1password-gui
+    anki
+    antigravity-fhs
+    bitwarden-desktop
+    brave-previews.packages.${pkgs.system}.brave-origin-nightly
+    brightnessctl
+    chromium
+    clipse
+    collision
+    ente-auth
+    file-roller
+    gnome-calculator
+    gnome-characters
+    gnome-clocks
+    google-chrome
+    haruna
+    helix
+    hyprcursor
+    hyprpicker
+    hyprpolkitagent
+    hyprshot
+    inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
+    kdePackages.breeze
+    kdePackages.breeze-gtk
+    kdePackages.kweather
+    kdePackages.okular
+    keepassxc
+    krita
+    libreoffice-qt-fresh
+    loupe
+    meld
+    (mpv.override {
+      scripts = [mpvScripts.mpris];
+    })
+    nautilus
+    networkmanagerapplet
+    onlykey
+    pavucontrol
+    picocrypt-ng
+    playerctl
+    qbittorrent
+    rofimoji
+    rofi
+    telegram-desktop
+    vivaldi
+    volantes-cursors
+    xwayland-satellite
+    zathura
+    zed-editor
+  ];
+
+  programs = {
+    librewolf = {
+      enable = true;
+
+      settings = {
+        "identity.fxaccounts.enabled" = true;
+      };
+    };
+
+    ghostty.enable = true;
+
+    vscode = {
+      enable = true;
+      package = pkgs.vscode.fhs;
+    };
+  };
+
+  imports = [
+    inputs.noctalia.homeModules.default
+    ./noctalia.nix
+    ./obs
+    ./hyprland
+  ];
+}

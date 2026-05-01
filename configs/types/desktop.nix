@@ -3,8 +3,6 @@
 
   hardware = {
     graphics = {
-      enable = true;
-
       extraPackages = with pkgs; [
         egl-wayland
         mesa
@@ -16,8 +14,6 @@
       open = true;
       modesetting.enable = true;
     };
-
-    nvidia-container-toolkit.enable = true;
   };
 
   environment.variables = {

@@ -1,7 +1,14 @@
-{ config, pkgs, ... }:
+{
+  config,
+  headless,
+  lib,
+  pkgs,
+  ...
+}:
 let
   dots = "${config.home.homeDirectory}/dots/configs";
   sym = path: config.lib.file.mkOutOfStoreSymlink path;
+
   configs = {
     btop         = "btop";
     clipse       = "clipse";
@@ -21,37 +28,9 @@ in
   })
   configs;
 
-  programs = {
-    librewolf = {
-      enable = true;
-      settings = {
-        "identity.fxaccounts.enabled" = true;
-      };
-    };
-
-    carapace = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
-
-    ghostty.enable = true;
-
-    vscode = {
-      enable = true;
-      package = pkgs.vscode.fhs;
-    };
-  };
-
   imports = [
-    ./git.nix
-    ./hyprlock.nix
-    ./noctalia.nix
-    ./nushell.nix
-    ./obs
-    ./ssh.nix
-    ./starship.nix
-    ./hyprland
-    ./waybar
-    ./yazi.nix
+    ./cli.nix
+  ] ++ lib.optionals (!headless) [
+    ./gui.nix
   ];
 }

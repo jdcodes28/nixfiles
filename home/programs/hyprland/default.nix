@@ -1,13 +1,16 @@
-{ machine, ... }: {
+{ machineType, ... }: {
   wayland.windowManager.hyprland = {
 		enable = true;
 		package = null;
 		portalPackage = null;
+
 		settings = {
 			"$fileManager" = "thunar";
 			"$mainMod" = "SUPER";
 			"$menu" = "rofi -show";
 			"$terminal" = "ghostty";
+			"$screenshots" = "~/Pictures/Screenshots";
+
 			decoration = {
 				blur = {
 					enabled = true;
@@ -41,7 +44,7 @@
 				"col.active_border" = "rgba(88ffffaa) rgba(cc33ffaa) rgba(ff33aaaa) rgba(ffcc33aa) rgba(77ff55aa) rgba(77ff55aa) rgba(ffcc33aa) rgba(ff33aaaa) rgba(cc33ffaa) rgba(88ffffaa) 22deg";
 				"col.inactive_border" = "rgba(3c3836be)";
 				gaps_in = 5;
-				gaps_out = 5;
+				gaps_out = 7.5;
 				layout = "dwindle";
 				resize_on_border = false;
 			};
@@ -53,6 +56,7 @@
 
 			animations = {
 				enabled = "yes, please :)";
+				
 				bezier = [
 					"easeOutQuint,0.23,1,0.32,1"
 					"easeInOutCubic,0.65,0.05,0.36,1"
@@ -60,6 +64,7 @@
 					"almostLinear,0.5,0.5,0.75,1.0"
 					"quick,0.15,0,0.1,1"
 				];
+				
 				animation = [
 					"global,1,10,default"
 					"border,1,5.39,easeOutQuint"
@@ -91,8 +96,9 @@
 				"$mainMod, D, exec, $menu"
 				"$mainMod, P, pseudo"
 				"$mainMod, J, togglesplit"
-				"$mainMod, N, exec, swaync-client -t -sw"
-				"$mainMod, L, exec, hyprlock"
+				"$mainMod, N, exec, noctalia-shell ipc call notifications toggleHistory"
+				"$mainMod, L, exec, noctalia-shell ipc call sessionMenu toggle"
+				"$mainMod, SPACE, exec, noctalia-shell ipc call launcher toggle"
 				"$mainMod,  left, movefocus, l"
 				"$mainMod, right, movefocus, r"
 				"$mainMod,    up, movefocus, u"
@@ -131,12 +137,12 @@
 				"$mainMod CTRL, 8, movetoworkspacesilent, 8"
 				"$mainMod CTRL, 9, movetoworkspacesilent, 9"
 				"$mainMod CTRL, 0, movetoworkspacesilent, 0"
-				"$mainMod, Print, exec, grim -c"
-				"$mainMod ALT, Print, exec, hyprshot -m window -z -o ~/Pictures/Screenshots"
-				"$mainMod SHIFT, Print, exec, hyprshot -m region -z -o ~/Pictures/Screenshots"
+				"$mainMod, Print, exec, hyprshot -m region -z -o $screenshots"
+				"$mainMod ALT, Print, exec, hyprshot -m window -z -o $screenshots"
+				"$mainMod CTRL, Print, exec, hyprshot -m region -z -o $screenshots"
 				"$mainMod, V, exec, $terminal --class=com.ghostty.clipse -e 'clipse'"
 				"$mainMod, C, exec, hyprpicker -a"
-				"$mainMod, M, exec, rofimoji -a copy type -s light"
+				"$mainMod, M, exec, rofimoji --selector-args='-config ~/dots/configs/rofi/rofimoji.rasi' --hidden-descriptions -a copy type -s light"
 			];
 
 			bindm = [
@@ -160,20 +166,12 @@
 				",XF86AudioPrev,  exec, playerctl previous"
 			];
 
-			exec = [
-				"avizo-service"
-			];
-
 			exec-once = [
-				"waybar"
 				"clipse -listen"
-				"wlsunset -l 41.7 -L -87.7 -t 3250 -T 6500"
 				"nm-applet --indicator"
-				"hypridle"
-				"swaync"
-				"bash ~/dots/scripts/wallpaper_randomizer.sh"
 				"systemctl --user start hyprpolkitagent"
 				"nu ~/dots/scripts/cursor.nu"
+				"noctalia-shell"
 			];
 
 			input = {
@@ -191,12 +189,12 @@
 				"NIXOS_OZONE_WL,1"
 				"XCURSOR_SIZE, 24"
 				"HYPRCURSOR_SIZE, 24"
-				"HYPRCURSOR_THEME, 'catppuccin-latte-light-cursors'"
+				"HYPRCURSOR_THEME, 'volantes-light-cursors'"
 				"XDG_CURRENT_DESKTOP,Hyprland"
 				"XDG_SESSION_TYPE,wayland"
 				"XDG_SESSION_DESKTOP,Hyprland"
 				"QT_QPA_PLATFORM,wayland"
-				"QT_QPA_PLATFORMTHEME,gnome"
+				"QT_QPA_PLATFORMTHEME,gtk3"
 				"QT_QUICK_CONTROLS_STYLE,org.hyprland.style"
 				"QT_AUTO_SCREEN_SCALE_FACTOR,1"
 				"GDK_SCALE,1"
@@ -205,18 +203,25 @@
 				"XDG_SCREENSHOTS_DIR,$HOME/Pictures/Screenshots"
 				"ELECTRON_OZONE_PLATFORM_HINT,wayland"
 				"EDITOR,hx"
-				"GRIM_DEFAULT_DIR,$HOME/Pictures/Screenshots"
 			];
 
 			windowrule = [
-				"float,class:(com.ghostty.clipse)"
-				"size 800 600,class:(com.ghostty.clipse)"
-				"float,class:(mpv)"
+				{
+					name = "clipse";
+					match.class = "clipse";
+					size = "800 600";
+					float = "on";
+				}
+				{
+					name = "mpv";
+					match.class = "mpv";
+					float = "on";
+				}
 			];
 		};
 	};
 
 	imports = [
-		./${machine}.nix
+		./${machineType}.nix
 	];
 }

@@ -1,55 +1,17 @@
 {
 	config,
+	headless,
+	lib,
+	machineName,
 	pkgs,
 	user,
-	niri,
 	...
 }: {
 	hardware.graphics.enable = true;
-	
-	programs = {
-		hyprland = {
-				enable          = true;
-				withUWSM        = true;
-				xwayland.enable = true;
-		};
-
-		niri.enable = true;
-		niri.package = niri.packages.${pkgs.stdenv.hostPlatform.system}.niri;
-
-		steam = {
-			enable                       = true;
-			remotePlay.openFirewall      = true;
-			dedicatedServer.openFirewall = true;
-		};
-
-		thunar = {
-			enable = true;
-
-			plugins = with pkgs; [
-				thunar-archive-plugin
-				thunar-media-tags-plugin
-				thunar-vcs-plugin
-				thunar-volman
-			];
-		};
-
-		xfconf.enable   = true;
-		xwayland.enable = true;
-	};
-
-	security = {
-		rtkit.enable          = true;
-		polkit.enable         = true;
-		pam.services.hyprlock = {};
-	};
 
 	services = {
-		displayManager.gdm.enable  = true;
-		fstrim.enable              = true;
-		gnome.gnome-keyring.enable = true;
-		gvfs.enable                = true;
-		tumbler.enable             = true;
+		fstrim.enable = true;
+		gvfs.enable   = true;
 	};
 
 	fonts.packages = with pkgs; [
@@ -60,29 +22,15 @@
 		noto-fonts-cjk-serif
 	];
 
-	fonts.fontconfig = {
-		enable = true;
-		antialias = true;
-
-		defaultFonts = {
-			sansSerif = [ "Inter" ];
-		};
-
-		hinting = {
-			enable   = true;
-			autohint = false;
-			style    = "full";
-		};
-
-		subpixel = {
-			lcdfilter = "default";
-			rgba      = "rgb";
-		};
-	};
-
 	environment.shells = [ pkgs.nushell ];
 
-	users.users.${user}.shell = pkgs.nushell;
+	users.users.${user} = {
+		description = user;
+		extraGroups = [ "networkmanager" "wheel" ];
+		isNormalUser = true;
+		packages = with pkgs; [];
+		shell = pkgs.nushell;
+	};
 
 	virtualisation.docker = {
 		enable = true;
@@ -94,13 +42,23 @@
 		};
 	};
 
-	xdg.portal = {
-		enable = true;
+	networking.networkmanager.enable = true;
+	i18n.defaultLocale = "en_US.UTF-8";
 
-		extraPortals = with pkgs; [
-			xdg-desktop-portal-gnome
-			xdg-desktop-portal-gtk
-			xdg-desktop-portal-hyprland
-		];
-	};
+	nixpkgs.config.allowUnfree = true;
+	
+	environment.systemPackages = with pkgs; [
+		git
+		neovim
+	];
+
+	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+	imports = [
+		./cli.nix
+		./hardware/${machineName}.nix
+		./machines/${machineName}.nix
+	] ++ lib.optionals (!headless) [
+		./gui.nix
+	];
 }

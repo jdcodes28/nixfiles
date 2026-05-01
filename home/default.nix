@@ -1,99 +1,14 @@
 {
-	brave-previews,
-	config,
-	inputs,
-	pkgs,
 	user,
-	version,
 	...
 }: {
 	home.username = user;
 	home.homeDirectory = "/home/${user}";
-	home.stateVersion = version;
-
-	home.packages = with pkgs; [
-		_1password-cli
-		_1password-gui
-		anki
-		antigravity-fhs
-		avizo
-		bat
-		bitwarden-desktop
-		brave
-		brave-previews.packages.${pkgs.system}.brave-origin-nightly
-		brightnessctl
-		btop
-		chromium
-		claude-code
-		clipse
-		collision
-		ente-auth
-		eza
-		fastfetch
-		file-roller
-		fzf
-		gemini-cli
-		gnome-calculator
-		gnome-characters
-		gnome-clocks
-		google-chrome
-		grim
-		haruna
-		helix
-		hyprcursor
-		hypridle
-		hyprland-qt-support
-		hyprpicker
-		hyprpolkitagent
-		hyprshot
-		inputs.codex-cli.packages.${pkgs.system}.default
-		inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
-		inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-		jujutsu
-		kdePackages.breeze
-		kdePackages.breeze-gtk
-		kdePackages.kweather
-		kdePackages.okular
-		keepassxc
-		krita
-		libreoffice-qt-fresh
-		loupe
-		lunatask
-		meld
-		(mpv.override {
-			scripts = [mpvScripts.mpris];
-		})
-		nautilus
-		networkmanagerapplet
-		opencode
-		pavucontrol
-		picocrypt-ng
-		playerctl
-		qbittorrent
-		ripgrep
-		rofimoji
-		rofi
-		swaybg
-		swaynotificationcenter
-		telegram-desktop
-		tree
-		unrar
-		vivaldi
-		volantes-cursors
-		wl-clip-persist
-		wl-clipboard
-		wlsunset
-		xwayland-satellite
-		zathura
-		zed-editor
-		zellij
-		zoxide
-	];
+	home.stateVersion = "25.11";
 
 	dconf.enable = true;
 
 	imports = [
-		inputs.noctalia.homeModules.default
 		./programs
 		./xdg.nix
 	];

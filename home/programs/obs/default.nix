@@ -1,4 +1,4 @@
-{ machine, pkgs, ... }: {
+{ machineType, pkgs, ... }: {
   programs.obs-studio = {
     enable = true;
 
@@ -11,6 +11,6 @@
   };
 
   imports = [
-    ./${machine}.nix
+    ./${machineType}.nix
   ];
 }
