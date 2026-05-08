@@ -44,9 +44,9 @@
     nautilus
     networkmanagerapplet
     onlykey
-    pavucontrol
     picocrypt-ng
     playerctl
+    pwvucontrol
     qbittorrent
     rofimoji
     rofi

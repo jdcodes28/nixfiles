@@ -7,12 +7,23 @@
 	user,
 	...
 }: {
-	hardware.graphics.enable = true;
-
 	services = {
 		fstrim.enable = true;
 		gvfs.enable   = true;
+
+		pipewire = {
+			enable = true;
+			alsa.enable = true;
+			alsa.support32Bit = true;
+			pulse.enable = true;
+		};
 	};
+
+	environment.shells = [ pkgs.nushell ];
+	environment.systemPackages = with pkgs; [
+		git
+		neovim
+	];
 
 	fonts.packages = with pkgs; [
 		fantasque-sans-mono
@@ -22,7 +33,13 @@
 		noto-fonts-cjk-serif
 	];
 
-	environment.shells = [ pkgs.nushell ];
+	hardware.graphics.enable = true;
+	hardware.pulseaudio.enable = false;
+	i18n.defaultLocale = "en_US.UTF-8";
+	networking.networkmanager.enable = true;
+	nixpkgs.config.allowUnfree = true;
+	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+	time.timeZone = "America/Chicago";
 
 	users.users.${user} = {
 		description = user;
@@ -41,18 +58,6 @@
 			setSocketVariable = true;
 		};
 	};
-
-	networking.networkmanager.enable = true;
-	i18n.defaultLocale = "en_US.UTF-8";
-
-	nixpkgs.config.allowUnfree = true;
-	
-	environment.systemPackages = with pkgs; [
-		git
-		neovim
-	];
-
-	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 	imports = [
 		./cli.nix
