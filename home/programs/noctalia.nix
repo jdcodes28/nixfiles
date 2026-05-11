@@ -10,6 +10,7 @@ let
   ];
 
   sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+in
 {
   programs.noctalia-shell = {
     enable = true;
