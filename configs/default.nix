@@ -10,6 +10,7 @@
 	services = {
 		fstrim.enable = true;
 		gvfs.enable   = true;
+		pulseaudio.enable = false;
 
 		pipewire = {
 			enable = true;
@@ -34,7 +35,6 @@
 	];
 
 	hardware.graphics.enable = true;
-	hardware.pulseaudio.enable = false;
 	i18n.defaultLocale = "en_US.UTF-8";
 	networking.networkmanager.enable = true;
 	nixpkgs.config.allowUnfree = true;

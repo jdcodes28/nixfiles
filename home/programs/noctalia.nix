@@ -1,4 +1,16 @@
-{ user, ... }: {
+{
+  lib,
+  user,
+  ...
+}:
+let
+  pluginNames = [
+    "niri-workspaces"
+    "privacy-indicator"
+  ];
+
+  sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+{
   programs.noctalia-shell = {
     enable = true;
 
@@ -122,6 +134,10 @@
             ];
 
             right = [
+              {
+                id = "plugin:privacy-indicator";
+              }
+
               {
                 blacklist = [];
                 chevronColor = "none";
@@ -737,8 +753,21 @@
         };
 
         plugins = {
-          autoUpdate = false;
+          autoUpdate = true;
           notifyUpdates = true;
+
+          sources = [
+            {
+              enabled = true;
+              name = "Official Noctalia Plugins";
+              url = sourceUrl;
+            }
+          ];
+
+          states = lib.genAttrs pluginNames (_: {
+            enabled = true;
+            inherit sourceUrl;
+          });
         };
 
         idle = {

@@ -51,7 +51,17 @@
   };
 
   services = {
-    displayManager.gdm.enable = true;
+    displayManager.ly = {
+      enable = true;
+
+      settings = {
+        animation        = "matrix";
+        bigclock         = "en";
+        bigclock_seconds = true;
+        clear_password   = true;
+      };
+    };
+
     gnome.gnome-keyring.enable = true;
     tumbler.enable = true;
 

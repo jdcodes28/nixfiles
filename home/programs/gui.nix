@@ -50,9 +50,12 @@
     qbittorrent
     rofimoji
     rofi
+    satty
     telegram-desktop
     vivaldi
     volantes-cursors
+    wl-clipboard
+    wl-clip-persist
     xwayland-satellite
     zathura
     zed-editor
