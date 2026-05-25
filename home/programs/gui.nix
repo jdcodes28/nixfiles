@@ -1,5 +1,4 @@
 {
-  brave-previews,
   inputs,
   pkgs,
   user,
@@ -11,7 +10,7 @@
     anki
     antigravity-fhs
     bitwarden-desktop
-    brave-previews.packages.${pkgs.system}.brave-origin-nightly
+    bleachbit
     brightnessctl
     chromium
     clipse
@@ -28,6 +27,7 @@
     hyprpicker
     hyprpolkitagent
     hyprshot
+    inputs.brave-previews.packages.${pkgs.system}.brave-origin-nightly
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
     kdePackages.breeze
     kdePackages.breeze-gtk
@@ -80,7 +80,7 @@
 
   imports = [
     inputs.noctalia.homeModules.default
-    ./noctalia.nix
+    ./noctalia
     ./obs
     ./hyprland
   ];

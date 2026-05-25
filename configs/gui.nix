@@ -1,4 +1,4 @@
-{ machineType, pkgs, ... }: {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     sbctl
   ];
@@ -80,8 +80,4 @@
       xdg-desktop-portal-hyprland
     ];
   };
-
-  imports = [
-    ./types/${machineType}.nix
-  ];
 }

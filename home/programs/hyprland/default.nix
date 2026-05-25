@@ -1,4 +1,4 @@
-{ machineType, ... }: {
+{ machineName, ... }: {
   wayland.windowManager.hyprland = {
 		enable = true;
 		package = null;
@@ -222,6 +222,6 @@
 	};
 
 	imports = [
-		./${machineType}.nix
+		./${machineName}.nix
 	];
 }

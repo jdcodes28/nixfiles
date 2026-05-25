@@ -2,11 +2,9 @@
   home.packages = with pkgs; [
     bat
     btop
-    claude-code
     eza
     fastfetch
     fzf
-    inputs.codex-cli.packages.${pkgs.system}.default
     jujutsu
     opencode
     ripgrep
