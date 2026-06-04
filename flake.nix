@@ -9,6 +9,8 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		dolphin-overlay.url = "github:MattiDragon/dolphin-overlay";
+
 		helium = {
 			url = "github:vikingnope/helium-browser-nix-flake";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -35,6 +37,7 @@
 	};
 
 	outputs = {
+		dolphin-overlay,
 		home-manager,
 		llm-agents,
 		nixpkgs,
@@ -63,6 +66,7 @@
 					networking.hostName = name;
 
 					nixpkgs.overlays = [
+						dolphin-overlay.overlays.default
 						llm-agents.overlays.default
 						nix-cachyos-kernel.overlays.pinned
 					];

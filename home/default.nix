@@ -1,10 +1,11 @@
 {
+	lib,
 	user,
 	...
 }: {
-	home.username = user;
 	home.homeDirectory = "/home/${user}";
-	home.stateVersion = "25.11";
+	home.stateVersion = "26.05";
+	home.username = user;
 
 	dconf.enable = true;
 

@@ -16,6 +16,24 @@ in
   programs.noctalia-shell = {
     enable = true;
 
+    plugins = {
+      autoUpdate = true;
+      notifyUpdates = true;
+
+      sources = [
+        {
+          enabled = true;
+          name = "Official Noctalia Plugins";
+          url = sourceUrl;
+        }
+      ];
+
+      states = lib.genAttrs pluginNames (_: {
+        enabled = true;
+        inherit sourceUrl;
+      });
+    };
+
     settings = {
       settingsVersion = 59;
 
@@ -752,24 +770,6 @@ in
         startup = "";
         session = "";
         colorGeneration = "";
-      };
-
-      plugins = {
-        autoUpdate = true;
-        notifyUpdates = true;
-
-        sources = [
-          {
-            enabled = true;
-            name = "Official Noctalia Plugins";
-            url = sourceUrl;
-          }
-        ];
-
-        states = lib.genAttrs pluginNames (_: {
-          enabled = true;
-          inherit sourceUrl;
-        });
       };
 
       idle = {

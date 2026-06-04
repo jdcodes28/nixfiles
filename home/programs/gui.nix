@@ -31,6 +31,7 @@
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
     kdePackages.breeze
     kdePackages.breeze-gtk
+    kdePackages.dolphin
     kdePackages.kweather
     kdePackages.okular
     keepassxc
@@ -43,7 +44,6 @@
     })
     nautilus
     networkmanagerapplet
-    onlykey
     picocrypt-ng
     playerctl
     pwvucontrol
