@@ -83,5 +83,10 @@ in
         "image/jxl"                         = imageViewer;
       };
     };
+
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
   };
 }

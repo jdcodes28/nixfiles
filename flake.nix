@@ -5,7 +5,7 @@
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
 		brave-previews = {
-			url = "github:drishal/brave-browser-flake";
+			url = "github:jdcodes28/brave-browser-flake";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
@@ -26,7 +26,7 @@
 		nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
 		noctalia = {
-			url = "github:noctalia-dev/noctalia-shell";
+			url = "github:noctalia-dev/noctalia/legacy-v4";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
