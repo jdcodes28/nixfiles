@@ -683,13 +683,13 @@ in
         };
 
         sounds = {
-          enabled = true;
-          volume = 0.33;
-          separateSounds = false;
-          criticalSoundFile = "/home/${user}/dots/sounds/notis.mp3";
-          normalSoundFile = "/home/${user}/dots/sounds/notis.mp3";
-          lowSoundFile = "/home/${user}/dots/sounds/notis.mp3";
-          excludedApps = "discord,firefox,chrome,chromium,edge";
+          enabled           = true;
+          volume            = 0.33;
+          separateSounds    = false;
+          criticalSoundFile = "/home/${user}/dots/sounds/notification.wav";
+          normalSoundFile   = "/home/${user}/dots/sounds/notification.wav";
+          lowSoundFile      = "/home/${user}/dots/sounds/notification.wav";
+          excludedApps      = "discord,firefox,chrome,chromium,edge";
         };
 
         enableMediaToast = true;
@@ -722,7 +722,7 @@ in
         mprisBlacklist = [];
         preferredPlayer = "mpv";
         volumeFeedback = true;
-        volumeFeedbackSoundFile = "/home/${user}/dots/sounds/vol_change.mp3";
+        volumeFeedbackSoundFile = "/home/${user}/dots/sounds/volume-change.wav";
       };
 
       brightness = {
