@@ -9,7 +9,6 @@
     _1password-gui
     anki
     antigravity-fhs
-    bitwarden-desktop
     bleachbit
     brightnessctl
     chromium
@@ -40,7 +39,12 @@
     loupe
     meld
     (mpv.override {
-      scripts = [mpvScripts.mpris];
+      scripts = with mpvScripts; [
+        mpris
+        thumbfast
+        uosc
+        videoclip
+      ];
     })
     nautilus
     networkmanagerapplet
@@ -53,7 +57,6 @@
     satty
     telegram-desktop
     vivaldi
-    volantes-cursors
     wl-clipboard
     wl-clip-persist
     xwayland-satellite
@@ -62,14 +65,6 @@
   ];
 
   programs = {
-    librewolf = {
-      enable = true;
-
-      settings = {
-        "identity.fxaccounts.enabled" = true;
-      };
-    };
-
     ghostty.enable = true;
 
     vscode = {
@@ -80,8 +75,9 @@
 
   imports = [
     inputs.noctalia.homeModules.default
+    ./hyprland
     ./noctalia
     ./obs
-    ./hyprland
+    ./volantes.nix
   ];
 }

@@ -1,6 +1,7 @@
 { machineName, ... }: {
   wayland.windowManager.hyprland = {
 		enable = true;
+		configType = "hyprlang";
 		package = null;
 		portalPackage = null;
 
@@ -35,7 +36,6 @@
 
 			dwindle = {
 				preserve_split = false;
-				pseudotile = true;
 			};
 
 			general = {
@@ -45,7 +45,7 @@
 				"col.inactive_border" = "rgba(3c3836be)";
 				gaps_in = 5;
 				gaps_out = 7.5;
-				layout = "dwindle";
+				layout = "scrolling";
 				resize_on_border = false;
 			};
 
@@ -95,7 +95,6 @@
 				"$mainMod, F, togglefloating"
 				"$mainMod, D, exec, $menu"
 				"$mainMod, P, pseudo"
-				"$mainMod, J, togglesplit"
 				"$mainMod, N, exec, noctalia-shell ipc call notifications toggleHistory"
 				"$mainMod, L, exec, noctalia-shell ipc call sessionMenu toggle"
 				"$mainMod, SPACE, exec, noctalia-shell ipc call launcher toggle"
@@ -143,6 +142,7 @@
 				"$mainMod, V, exec, $terminal --class=com.ghostty.clipse -e 'clipse'"
 				"$mainMod, C, exec, hyprpicker -a"
 				"$mainMod, M, exec, rofimoji --selector-args='-config ~/dots/configs/rofi/rofimoji.rasi' --hidden-descriptions -a copy type -s light"
+				"$mainMod, T, exec, ~/dots/scripts/themes.nu"
 			];
 
 			bindm = [
@@ -208,7 +208,7 @@
 			windowrule = [
 				{
 					name = "clipse";
-					match.class = "clipse";
+					match.class = "com.ghostty.clipse";
 					size = "800 600";
 					float = "on";
 				}
