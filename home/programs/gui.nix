@@ -64,6 +64,12 @@
     zed-editor
   ];
 
+  home.pointerCusor = {
+    enabled = true;
+    package = (pkgs.callPackage ./volantes.nix {});
+    name    = "volantes";
+  };
+
   programs = {
     ghostty.enable = true;
 
@@ -78,6 +84,7 @@
     ./hyprland
     ./noctalia
     ./obs
+    ./schizofox
     ./volantes.nix
   ];
 }
