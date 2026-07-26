@@ -81,10 +81,10 @@
 
   imports = [
     inputs.noctalia.homeModules.default
+    ./firefox
     ./hyprland
     ./noctalia
     ./obs
-    ./schizofox
     ./volantes.nix
   ];
 }
