@@ -66,6 +66,12 @@
 
       DontCheckDefaultBrowser     = true;
       HardwareAcceleration        = true;
+
+      Homepage = {
+        StartPage = "none";
+        NewTabOnRestore = true;
+      };
+
       HttpsOnlyMode               = "force_enabled";
       NewTabPage                  = false;
       NoDefaultBookmarks          = true;
@@ -299,4 +305,5 @@
     };
   };
 }
+
 

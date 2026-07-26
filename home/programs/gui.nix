@@ -5,6 +5,7 @@
   ...
 }: {
   home.packages = with pkgs; [
+    (pkgs.callPackage ./volantes.nix {})
     _1password-cli
     _1password-gui
     anki
@@ -64,12 +65,6 @@
     zed-editor
   ];
 
-  home.pointerCusor = {
-    enabled = true;
-    package = (pkgs.callPackage ./volantes.nix {});
-    name    = "volantes";
-  };
-
   programs = {
     ghostty.enable = true;
 
@@ -85,6 +80,5 @@
     ./hyprland
     ./noctalia
     ./obs
-    ./volantes.nix
   ];
 }
