@@ -3,7 +3,7 @@
     enable = true;
     extraConfig = ''
       Host *
-        IdentityAgent ~/.1password/agent.sock
+        IdentityAgent ~/.bitwarden-ssh-agent.sock
 
       Host github_personal
         HostName github.com

@@ -6,10 +6,9 @@
 }: {
   home.packages = with pkgs; [
     (pkgs.callPackage ./volantes.nix {})
-    _1password-cli
-    _1password-gui
     anki
     antigravity-fhs
+    bitwarden-desktop
     bleachbit
     brightnessctl
     chromium
