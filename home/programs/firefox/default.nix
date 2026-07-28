@@ -220,6 +220,7 @@
       "dom.event.clipboardevents.enabled" = false;
       "dom.gamepad.enabled" = false;
       "dom.security.https_only_mode" = true;
+      "extensions.activeThemeID" = "firefox-alpenglow@mozilla.org";
       "extensions.enabledScopes" = 5;
       "extensions.formautofill.addresses.enabled" = false;
       "extensions.formautofill.creditCards.enabled" = false;
