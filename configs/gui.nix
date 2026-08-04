@@ -3,23 +3,29 @@
     sbctl
   ];
 
-  fonts.fontconfig = {
-    enable = true;
-    antialias = true;
+  fonts = {
+    packages = with pkgs; [
+  		fantasque-sans-mono
+  		inter
+  		nerd-fonts.iosevka
+  	];
 
-    defaultFonts = {
-      sansSerif = [ "Inter" ];
-    };
+    enableDefaultPackages = true;
 
-    hinting = {
+    fontconfig = {
       enable = true;
-      autohint = false;
-      style = "full";
-    };
+      antialias = true;
 
-    subpixel = {
-      lcdfilter = "default";
-      rgba = "rgb";
+      hinting = {
+        enable = true;
+        autohint = false;
+        style = "full";
+      };
+
+      subpixel = {
+        lcdfilter = "default";
+        rgba = "rgb";
+      };
     };
   };
 

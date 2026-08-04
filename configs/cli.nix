@@ -11,6 +11,7 @@
   (with inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}; [
     claude-code
     codex
+    hermes-agent
     omp
     opencode
   ]);

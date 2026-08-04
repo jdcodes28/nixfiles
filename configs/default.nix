@@ -26,14 +26,6 @@
 		neovim
 	];
 
-	fonts.packages = with pkgs; [
-		fantasque-sans-mono
-		inter
-		nerd-fonts.iosevka
-		noto-fonts-cjk-sans
-		noto-fonts-cjk-serif
-	];
-
 	hardware.graphics.enable = true;
 	i18n.defaultLocale = "en_US.UTF-8";
 	networking.networkmanager.enable = true;

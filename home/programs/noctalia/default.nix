@@ -312,7 +312,7 @@ in
       };
 
       ui = {
-        fontDefault = "Adwaita Sans";
+        fontDefault = "Inter";
         fontFixed = "TX-02";
         fontDefaultScale = 1;
         fontFixedScale = 1;
