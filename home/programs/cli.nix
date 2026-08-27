@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     bat
     btop
+    delta
     eza
     fastfetch
     fzf
