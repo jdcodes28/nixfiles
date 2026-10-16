@@ -21,6 +21,10 @@
   boot.initrd.luks.devices."luks-7a39d4c0-cd64-462d-90b3-d1a683467e57".device = "/dev/disk/by-uuid/7a39d4c0-cd64-462d-90b3-d1a683467e57";
   boot.initrd.luks.devices."luks-bf0876fc-2e6a-4e1e-8b48-1ecb5eda75a5".device = "/dev/disk/by-uuid/bf0876fc-2e6a-4e1e-8b48-1ecb5eda75a5";
 
+  services.udev.extraRules = ''
+    ENV{ID_FS_UUID}=="3b43d09f-5fda-4c7f-8018-08e8ce590678", ENV{UDISKS_SYSTEM}="0"
+  '';
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/F1F6-7AC1";
       fsType = "vfat";

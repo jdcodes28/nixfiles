@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+
   environment.systemPackages = with pkgs; [
     sbctl
   ];
@@ -13,30 +15,30 @@
     enableDefaultPackages = true;
 
     fontconfig = {
-      enable = true;
+      enable    = true;
       antialias = true;
 
       hinting = {
-        enable = true;
+        enable   = true;
         autohint = false;
-        style = "full";
+        style    = "full";
       };
 
       subpixel = {
         lcdfilter = "default";
-        rgba = "rgb";
+        rgba      = "rgb";
       };
     };
   };
 
   programs = {
     hyprland = {
-      enable = true;
-      withUWSM = true;
+      enable          = true;
+      withUWSM        = true;
       xwayland.enable = true;
     };
 
-    niri.enable = true;
+    niri.enable  = true;
     steam.enable = true;
 
     thunar = {
@@ -52,7 +54,7 @@
   };
 
   security = {
-    rtkit.enable = true;
+    rtkit.enable  = true;
     polkit.enable = true;
   };
 

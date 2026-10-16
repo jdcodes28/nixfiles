@@ -13,6 +13,6 @@
     codex
     hermes-agent
     omp
-    opencode
+    opencode2
   ]);
 }

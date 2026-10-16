@@ -8,45 +8,50 @@
 	...
 }: {
 	services = {
-		fstrim.enable = true;
-		gvfs.enable   = true;
+		fstrim.enable     = true;
+		gvfs.enable       = true;
+		portmaster.enable = true;
 		pulseaudio.enable = false;
 
 		pipewire = {
-			enable = true;
-			alsa.enable = true;
+			enable            = true;
+			alsa.enable       = true;
 			alsa.support32Bit = true;
-			pulse.enable = true;
+			pulse.enable      = true;
+		};
+
+		syncthing = {
+			enable           = true;
+			openDefaultPorts = true;
+			user             = user;
 		};
 	};
 
 	environment.shells = [ pkgs.nushell ];
 	environment.systemPackages = with pkgs; [
 		git
-		neovim
 	];
 
-	hardware.graphics.enable = true;
-	i18n.defaultLocale = "en_US.UTF-8";
-	networking.networkmanager.enable = true;
-	nixpkgs.config.allowUnfree = true;
+	hardware.graphics.enable           = true;
+	i18n.defaultLocale                 = "en_US.UTF-8";
+	networking.networkmanager.enable   = true;
+	nixpkgs.config.allowUnfree         = true;
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
-	time.timeZone = "America/Chicago";
 
 	users.users.${user} = {
-		description = user;
-		extraGroups = [ "networkmanager" "wheel" ];
+		description  = user;
+		extraGroups  = [ "networkmanager" "wheel" ];
 		isNormalUser = true;
-		packages = with pkgs; [];
-		shell = pkgs.nushell;
+		packages     = with pkgs; [];
+		shell        = pkgs.nushell;
 	};
 
 	virtualisation.docker = {
-		enable = true;
+		enable       = true;
 		enableOnBoot = true;
 
 		rootless = {
-			enable = true;
+			enable            = true;
 			setSocketVariable = true;
 		};
 	};

@@ -6,9 +6,11 @@
     eza
     fastfetch
     fzf
+    jd-diff-patch
+    jq
     jujutsu
-    opencode
     ripgrep
+    traceroute
     tree
     unrar
     zellij

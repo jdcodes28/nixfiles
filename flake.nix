@@ -9,8 +9,6 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		dolphin-overlay.url = "github:MattiDragon/dolphin-overlay";
-
 		helium = {
 			url = "github:vikingnope/helium-browser-nix-flake";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -22,13 +20,8 @@
 		};
 
 		llm-agents.url = "github:numtide/llm-agents.nix";
-
 		nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-
-		noctalia = {
-			url = "github:noctalia-dev/noctalia/legacy-v4";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+		noctalia.url = "github:noctalia-dev/noctalia/cachix";
 
 		zen-browser = {
 			url = "github:youwen5/zen-browser-flake";
@@ -37,7 +30,6 @@
 	};
 
 	outputs = {
-		dolphin-overlay,
 		home-manager,
 		llm-agents,
 		nixpkgs,
@@ -66,7 +58,6 @@
 					networking.hostName = name;
 
 					nixpkgs.overlays = [
-						dolphin-overlay.overlays.default
 						llm-agents.overlays.shared-nixpkgs
 						nix-cachyos-kernel.overlays.pinned
 					];
@@ -75,11 +66,13 @@
 						extra-substituters = [
 							"https://attic.xuyh0120.win/lantian"
 							"https://cache.numtide.com"
+							"https://noctalia.cachix.org"
 						];
 
 						extra-trusted-public-keys = [
 							"lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
 							"niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
+							"noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
 						];
 					};
 				}

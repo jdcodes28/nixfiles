@@ -4,6 +4,7 @@
 }: {
   boot.loader.limine = {
     enable = true;
+    maxGenerations = 10;
     secureBoot.enable = true;
   };
 
@@ -16,6 +17,8 @@
     mullvad-vpn.enable = true;
     upower.enable = true;
   };
+
+  time.timeZone = "America/Chicago";
 
   system.stateVersion = "26.05";
 }

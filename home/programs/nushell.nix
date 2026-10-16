@@ -3,8 +3,9 @@
     enable = true;
 
     shellAliases = {
-      vi = "hx";
-      vim = "hx";
+      oc   = "opencode2";
+      vi   = "hx";
+      vim  = "hx";
       nano = "hx";
     };
 
@@ -29,6 +30,8 @@
       }
 
       fastfetch --logo-color-1 "38;2;0;255;255" --logo-color-2 "38;2;255;0;255" --logo-color-3 "38;2;255;255;0" --logo-color-4 "38;2;0;255;255" --logo-color-5 "38;2;255;0;255" --logo-color-6 "38;2;255;255;0"
+
+      source ~/.local/share/atuin/init.nu
     '';
   };
 }

@@ -7,13 +7,13 @@
   home.packages = with pkgs; [
     (pkgs.callPackage ./volantes.nix {})
     anki
-    antigravity-fhs
     bitwarden-desktop
     bleachbit
     brightnessctl
     chromium
     clipse
     collision
+    czkawka
     ente-auth
     file-roller
     gnome-calculator
@@ -24,9 +24,12 @@
     helix
     hyprcursor
     hyprpicker
-    hyprpolkitagent
     hyprshot
-    inputs.brave-previews.packages.${pkgs.system}.brave-origin-nightly
+    (inputs.brave-previews.packages.${pkgs.system}.brave-origin-nightly.override {
+      commandLineArgs = [
+        " --enable-features=VaapiOnNvidiaGPUs"
+      ];
+    })
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
     kdePackages.breeze
     kdePackages.breeze-gtk
@@ -48,6 +51,7 @@
     })
     nautilus
     networkmanagerapplet
+    onlyoffice-desktopeditors
     picocrypt-ng
     playerctl
     pwvucontrol
@@ -65,12 +69,8 @@
   ];
 
   programs = {
+    atuin.enable = true;
     ghostty.enable = true;
-
-    vscode = {
-      enable = true;
-      package = pkgs.vscode.fhs;
-    };
   };
 
   imports = [

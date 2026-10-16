@@ -11,6 +11,7 @@
 			"$menu" = "rofi -show";
 			"$terminal" = "ghostty";
 			"$screenshots" = "~/Pictures/Screenshots";
+			"$shell" = "noctalia msg";
 
 			decoration = {
 				blur = {
@@ -95,9 +96,10 @@
 				"$mainMod, F, togglefloating"
 				"$mainMod, D, exec, $menu"
 				"$mainMod, P, pseudo"
-				"$mainMod, N, exec, noctalia-shell ipc call notifications toggleHistory"
-				"$mainMod, L, exec, noctalia-shell ipc call sessionMenu toggle"
-				"$mainMod, SPACE, exec, noctalia-shell ipc call launcher toggle"
+				"$mainMod, N, exec, $shell panel-toggle control-center notifications"
+				"$mainMod, L, exec, $shell panel-toggle session"
+				"$mainMod, V, exec, $shell panel-toggle clipboard"
+				"$mainMod, SPACE, exec, $shell panel-toggle launcher"
 				"$mainMod,  left, movefocus, l"
 				"$mainMod, right, movefocus, r"
 				"$mainMod,    up, movefocus, u"
@@ -139,7 +141,6 @@
 				"$mainMod, Print, exec, hyprshot -m region -z -o $screenshots"
 				"$mainMod ALT, Print, exec, hyprshot -m window -z -o $screenshots"
 				"$mainMod CTRL, Print, exec, hyprshot -m region -z -o $screenshots"
-				"$mainMod, V, exec, $terminal --class=com.ghostty.clipse -e 'clipse'"
 				"$mainMod, C, exec, hyprpicker -a"
 				"$mainMod, M, exec, rofimoji --selector-args='-config ~/dots/configs/rofi/rofimoji.rasi' --hidden-descriptions -a copy type -s light"
 				"$mainMod, T, exec, ~/dots/scripts/themes.nu"
@@ -151,12 +152,12 @@
 			];
 
 			bindel = [
-				",XF86AudioRaiseVolume,  exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-				",XF86AudioLowerVolume,  exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-				",XF86AudioMute,         exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-				",XF86AudioMicMute,      exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-				",XF86MonBrightnessUp,   exec, brightnessctl set 5%+"
-				",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+				",XF86AudioRaiseVolume,  exec, $shell volume-up"
+				",XF86AudioLowerVolume,  exec, $shell volume-down"
+				",XF86AudioMute,         exec, $shell volume-mute"
+				",XF86AudioMicMute,      exec, $shell mic-mute"
+				",XF86MonBrightnessUp,   exec, $shell brightness-up"
+				",XF86MonBrightnessDown, exec, $shell brightness-down"
 			];
 
 			bindl = [
@@ -167,11 +168,11 @@
 			];
 
 			exec-once = [
-				"clipse -listen"
 				"nm-applet --indicator"
 				"systemctl --user start hyprpolkitagent"
 				"nu ~/dots/scripts/cursor.nu"
-				"noctalia-shell"
+				"~/dots/scripts/wallpaper_linker.sh"
+				"noctalia"
 			];
 
 			input = {
