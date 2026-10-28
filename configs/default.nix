@@ -10,7 +10,6 @@
 	services = {
 		fstrim.enable     = true;
 		gvfs.enable       = true;
-		portmaster.enable = true;
 		pulseaudio.enable = false;
 
 		pipewire = {

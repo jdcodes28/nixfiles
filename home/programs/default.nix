@@ -11,7 +11,6 @@ let
 
   configs = {
     btop         = "btop";
-    clipse       = "clipse";
     ghostty      = "ghostty";
     helix        = "helix";
     niri         = "niri";

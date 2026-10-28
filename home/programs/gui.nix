@@ -1,11 +1,18 @@
 {
   inputs,
+  osConfig,
   pkgs,
   user,
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.callPackage ./volantes.nix {})
+    (pkgs.callPackage ./cursors.nix {
+      win2xcur-src = inputs.win2xcur;
+
+      packages = with pkgs; [
+        bibata-cursors
+      ];
+    })
     anki
     bitwarden-desktop
     bleachbit
@@ -25,12 +32,19 @@
     hyprcursor
     hyprpicker
     hyprshot
-    (inputs.brave-previews.packages.${pkgs.system}.brave-origin-nightly.override {
+    ((inputs.brave-previews.packages.${pkgs.system}.brave-origin-nightly.override {
       commandLineArgs = [
         " --enable-features=VaapiOnNvidiaGPUs"
       ];
-    })
-    inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
+    }).overrideAttrs (old: {
+      preFixup = (old.preFixup or "") + pkgs.lib.optionalString (
+        builtins.elem "nvidia" osConfig.services.xserver.videoDrivers
+      ) ''
+        # Browser-only workaround for nvidia-vaapi-driver's modifier crash:
+        # https://github.com/elFarto/nvidia-vaapi-driver/issues/474
+        gappsWrapperArgs+=(--set NVD_SINGLE_BUFFER 1)
+      '';
+    }))
     kdePackages.breeze
     kdePackages.breeze-gtk
     kdePackages.dolphin

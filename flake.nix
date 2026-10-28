@@ -9,10 +9,7 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		helium = {
-			url = "github:vikingnope/helium-browser-nix-flake";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+		helium.url = "github:greyxp1/helium-flake";
 
 		home-manager = {
 			url = "github:nix-community/home-manager";
@@ -22,6 +19,11 @@
 		llm-agents.url = "github:numtide/llm-agents.nix";
 		nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 		noctalia.url = "github:noctalia-dev/noctalia/cachix";
+
+		win2xcur = {
+			url = "github:jdcodes28/win2xcur";
+			flake = false;
+		};
 
 		zen-browser = {
 			url = "github:youwen5/zen-browser-flake";
@@ -64,15 +66,17 @@
 
 					nix.settings = {
 						extra-substituters = [
-							"https://attic.xuyh0120.win/lantian"
 							"https://cache.numtide.com"
 							"https://noctalia.cachix.org"
+							"https://cache.lantian.pub/lantian"
+							"https://cache.xinux.uz"
 						];
 
 						extra-trusted-public-keys = [
-							"lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
 							"niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
 							"noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+							"lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ="
+							"cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="
 						];
 					};
 				}

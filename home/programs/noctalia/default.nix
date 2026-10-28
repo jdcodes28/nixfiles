@@ -125,6 +125,7 @@
         launch_apps_as_systemd_services = true;
         niri_overview_type_to_launch_enabled = true;
         password_style = "random";
+        polkit_agent = true;
         screen_time_enabled = true;
         settings_show_advanced = false;
         settings_window_translucent = true;
@@ -211,5 +212,3 @@
     ./${machineName}.nix
   ];
 }
-
-

@@ -169,7 +169,6 @@
 
 			exec-once = [
 				"nm-applet --indicator"
-				"systemctl --user start hyprpolkitagent"
 				"nu ~/dots/scripts/cursor.nu"
 				"~/dots/scripts/wallpaper_linker.sh"
 				"noctalia"

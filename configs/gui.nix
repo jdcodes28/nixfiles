@@ -7,9 +7,9 @@
 
   fonts = {
     packages = with pkgs; [
-  		fantasque-sans-mono
-  		inter
-  		nerd-fonts.iosevka
+      fantasque-sans-mono
+      inter
+      nerd-fonts.iosevka
   	];
 
     enableDefaultPackages = true;
@@ -88,4 +88,8 @@
       xdg-desktop-portal-hyprland
     ];
   };
+
+  imports = [
+    ./helium.nix
+  ];
 }

@@ -1,6 +1,6 @@
 let
   archiveManager = "org.gnome.FileRoller.desktop";
-  browser        = "brave-origin-nightly.desktop";
+  browser        = "helium.desktop";
   documentReader = "org.pwmt.zathura.desktop";
   imageViewer    = "org.gnome.Loupe.desktop";
   videoPlayer    = "mpv.desktop";
@@ -32,9 +32,7 @@ in
         "video/*"                           = videoPlayer;
         "image/*"                           = imageViewer;
 
-
         "application/pdf"                   = documentReader;
-
 
         "application/x-7z-compressed"       = archiveManager;
         "application/x-7z-compressed-tar"   = archiveManager;
